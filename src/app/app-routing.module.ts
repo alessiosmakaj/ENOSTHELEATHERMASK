@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { LaMascheraComponent } from './la-maschera/la-maschera.component';
 import { OpereComponent } from './opere/opere.component';
 import { DipintiComponent } from './dipinti/dipinti.component';
 import { InstallazioniComponent } from './installazioni/installazioni.component';
@@ -14,6 +15,7 @@ import { BiografiaComponent } from './biografia/biografia.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Home di default
+  { path: 'la-maschera', component: LaMascheraComponent },
   { path: 'opere', component: OpereComponent },
   { path: 'dipinti', component: DipintiComponent },
   { path: 'tattoo', redirectTo: 'performance' },

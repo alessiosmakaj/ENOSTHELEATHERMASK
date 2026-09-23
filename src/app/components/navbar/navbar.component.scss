@@ -117,8 +117,12 @@
     // Il gruppo sinistro è più largo (PERFORMANCE): lo avvicino un po' al logo
     // perché a colpo d'occhio risulti speculare a VIDEO / MOSTRE.
     &--left {
-      justify-self: end;
+      width: 100%;
       margin-right: -0.9rem;
+    }
+
+    &--left li:first-child {
+      margin-right: auto;
     }
 
     &--right li:last-child {

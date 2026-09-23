@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DipintiComponent } from './dipinti/dipinti.component';
 import { PerformanceComponent } from './performance/performance.component';
+import { LaMascheraComponent } from './la-maschera/la-maschera.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PerformanceComponent } from './performance/performance.component';
     NavbarComponent,
     FooterComponent,
     DipintiComponent,
-    PerformanceComponent
+    PerformanceComponent,
+    LaMascheraComponent
   ],
   imports: [
     BrowserModule,
