@@ -1,0 +1,218 @@
+@import 'variables';
+@import 'mixins';
+
+.navbar {
+  width: 100%;
+  background: rgba(8, 7, 10, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid $color-iron-soft;
+  transition: padding $dur-base $ease-cinematic;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 $space-4;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    text-align: center;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      color: $color-ivory;
+      text-decoration: none;
+      transition: color $dur-fast ease, text-shadow $dur-fast ease;
+
+      &:hover {
+        color: $color-blood-bright;
+        text-shadow: 0 0 18px $color-blood-glow;
+
+        .navbar__logo-sub {
+          color: $color-blood-bright;
+        }
+      }
+    }
+  }
+
+  &__logo-main {
+    font-family: $font-display;
+    font-size: 1.6rem;
+    letter-spacing: $ls-wide;
+  }
+
+  &__logo-sub {
+    font-family: $font-accent;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: $color-ivory-faint;
+    transition: color $dur-fast ease;
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    gap: $space-2;
+    margin: 0;
+    padding: 0;
+
+    a {
+      position: relative;
+      text-decoration: none;
+      color: $color-ivory-dim;
+      font-family: $font-display;
+      font-size: 1rem;
+      letter-spacing: $ls-mid;
+      padding: 0.5rem 0.1rem;
+      transition: color $dur-fast ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 100%;
+        bottom: -2px;
+        height: 1px;
+        background: $color-blood-bright;
+        transition: right $dur-base $ease-cinematic;
+      }
+
+      &:hover {
+        color: $color-ivory;
+
+        &::after {
+          right: 0;
+        }
+      }
+
+      &.active {
+        color: $color-ivory;
+
+        &::after {
+          right: 0;
+        }
+      }
+    }
+
+    &--left {
+      margin-right: auto;
+    }
+
+    &--right {
+      margin-left: auto;
+    }
+  }
+
+  &__menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    padding: 0;
+
+    .bar {
+      width: 100%;
+      height: 2px;
+      background: $color-ivory;
+      transition: transform $dur-fast ease, opacity $dur-fast ease;
+    }
+
+    &.open {
+      .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .bar:nth-child(2) { opacity: 0; }
+      .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+  }
+
+  &__mobile-menu {
+    background: $color-charcoal-2;
+    border-top: 1px solid $color-iron-soft;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: max-height $dur-base $ease-cinematic, opacity $dur-base $ease-cinematic, transform $dur-base $ease-cinematic;
+    pointer-events: none;
+
+    &.open {
+      padding: $space-3 $space-4;
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: $space-2;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: $color-ivory-dim;
+      font-family: $font-display;
+      font-size: 1.15rem;
+      letter-spacing: $ls-mid;
+      padding: 0.6rem 0.25rem;
+      border-bottom: 1px solid $color-iron-soft;
+      transition: color $dur-fast ease, padding-left $dur-fast ease;
+
+      &:hover {
+        color: $color-ivory;
+        padding-left: $space-2;
+      }
+
+      &.active {
+        color: $color-blood-bright;
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .navbar {
+    padding: 1.1rem 0;
+
+    &__logo {
+      font-size: 1.3rem;
+    }
+
+    &__menu-btn {
+      display: flex;
+    }
+
+    &__links--left,
+    &__links--right {
+      display: none;
+    }
+  }
+}

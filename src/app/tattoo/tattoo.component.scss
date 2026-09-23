@@ -1,0 +1,11 @@
+@import 'variables';
+@import 'mixins';
+
+.tattoo-intro {
+  padding-top: 0;
+  text-align: center;
+
+  &__inner {
+    max-width: 680px;
+  }
+}

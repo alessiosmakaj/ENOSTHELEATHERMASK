@@ -1,0 +1,30 @@
+<header class="page-header">
+  <span class="page-header__eyebrow">Percorso espositivo</span>
+  <h1 class="page-header__title">Mostre</h1>
+  <p class="page-header__lede">Dalla scena underground romana verso gallerie e curatori internazionali.</p>
+</header>
+
+<section class="section mostre-intro">
+  <div class="container mostre-intro__inner">
+    <p>
+      Il percorso espositivo di Enos è in costruzione: l'obiettivo dei prossimi mesi è
+      portare il lavoro — oggi radicato nella scena underground romana — verso gallerie e
+      curatori di arte materica, body art e neo-espressionismo viscerale, in Italia e in
+      piazze internazionali come Berlino, Bruxelles e Londra.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <ol class="timeline">
+      <li class="timeline__item" *ngFor="let mostra of mostre">
+        <span class="timeline__year">{{ mostra.year }}</span>
+        <div class="timeline__body">
+          <h3 class="timeline__title">{{ mostra.title }}</h3>
+          <p class="timeline__location">{{ mostra.location }}</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>

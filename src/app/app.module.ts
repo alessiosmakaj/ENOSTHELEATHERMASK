@@ -4,9 +4,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HomeComponent } from './home/home.component';
+import { BiografiaComponent } from './biografia/biografia.component';
+import { MostreComponent } from './mostre/mostre.component';
+import { VideoComponent } from './video/video.component';
+import { OpereComponent } from './opere/opere.component';
+import { InstallazioniComponent } from './installazioni/installazioni.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DipintiComponent } from './dipinti/dipinti.component';
+import { TattooComponent } from './tattoo/tattoo.component';
+import { PerformanceComponent } from './performance/performance.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    BiografiaComponent,
+    MostreComponent,
+    VideoComponent,
+    OpereComponent,
+    InstallazioniComponent,
+    NavbarComponent,
+    FooterComponent,
+    DipintiComponent,
+    TattooComponent,
+    PerformanceComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,128 @@
+@import 'variables';
+@import 'mixins';
+
+.bio {
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) 1fr;
+    gap: $space-6;
+    align-items: start;
+  }
+
+  &__portrait {
+    aspect-ratio: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(ellipse at center, rgba($color-blood, 0.2), transparent 70%),
+      linear-gradient(160deg, $color-charcoal-2, $color-void);
+    border: 1px solid $color-iron-soft;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-soft;
+    color: rgba($color-ivory, 0.3);
+
+    svg {
+      width: 40%;
+      height: 40%;
+    }
+  }
+
+  &__content {
+    p {
+      max-width: 62ch;
+    }
+  }
+
+  &__quote {
+    font-family: $font-accent;
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    color: $color-ivory;
+    border-left: 2px solid $color-blood;
+    padding-left: $space-4;
+    margin-bottom: $space-5;
+
+    &--small {
+      font-size: 1.1rem;
+      margin-bottom: $space-4;
+    }
+  }
+
+  &__subhead {
+    margin-top: $space-5;
+    color: $color-blood-bright;
+  }
+
+  &__note {
+    color: $color-ivory-faint;
+    font-size: $fs-small;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .bio__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bio__portrait {
+    max-width: 260px;
+    margin-inline: auto;
+  }
+}
+
+.contact {
+  border-top: 1px solid $color-iron-soft;
+
+  .page-header__eyebrow {
+    text-align: left;
+    margin-bottom: $space-2;
+  }
+
+  &__title {
+    margin-bottom: $space-5;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-5 $space-6;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+  }
+
+  &__label {
+    font-family: $font-rough;
+    font-size: 0.7rem;
+    letter-spacing: $ls-wide;
+    text-transform: uppercase;
+    color: $color-ivory-faint;
+  }
+
+  &__value {
+    font-size: 1.1rem;
+    color: $color-ivory;
+    text-decoration: none;
+    margin: 0;
+    width: fit-content;
+    transition: color $dur-fast ease;
+
+    &--muted {
+      font-size: 0.95rem;
+      color: $color-ivory-dim;
+    }
+  }
+
+  a.contact__value:hover {
+    color: $color-blood-bright;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}

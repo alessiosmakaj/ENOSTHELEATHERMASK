@@ -1,0 +1,27 @@
+<header class="page-header">
+  <span class="page-header__eyebrow">L'altare</span>
+  <h1 class="page-header__title">Installazioni</h1>
+  <p class="page-header__lede">Opere ambientali e site-specific, dove lo studio diventa altare e rituale.</p>
+</header>
+
+<p class="content-note">Opere a tema maturo — corpo, sangue, morte e rinascita — in chiave critico-artistica.</p>
+
+<section class="section">
+  <div class="container">
+    <div class="card-grid">
+      <article class="card" *ngFor="let item of installazioni">
+        <div class="card__media">
+          <svg viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+            <rect x="18" y="18" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.2" transform="rotate(45 50 50)"/>
+            <circle cx="50" cy="50" r="14" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">{{ item.title }}</h3>
+          <p class="card__meta">{{ item.meta }}</p>
+          <p class="card__desc">{{ item.desc }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

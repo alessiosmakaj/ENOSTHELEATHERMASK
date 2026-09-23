@@ -1,0 +1,78 @@
+@import 'variables';
+
+// Container centrato con padding responsive
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+  padding-inline: $space-4;
+
+  @media (max-width: $bp-tablet) {
+    padding-inline: $space-3;
+  }
+}
+
+// Padding verticale standard per sezioni
+@mixin section-space {
+  padding-block: $space-7;
+
+  @media (max-width: $bp-tablet) {
+    padding-block: $space-5;
+  }
+}
+
+// Vignette scura sui bordi, per profondità cinematica
+@mixin vignette($strength: 0.65) {
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0) 45%,
+      rgba(0, 0, 0, $strength) 100%
+    );
+  }
+}
+
+// Separatore ornamentale gotico (linea + rombo centrale)
+@mixin ornamental-divider($color: $color-blood-bright) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba($color, 0.6));
+  }
+
+  &::after {
+    background: linear-gradient(90deg, rgba($color, 0.6), transparent);
+  }
+}
+
+// Focus visibile coerente e accessibile su fondo scuro
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid $color-blood-bright;
+    outline-offset: 3px;
+    border-radius: $radius-sm;
+  }
+}
+
+// Titolo di sezione uniforme — usa la variante "rovinata" del font di brand
+// per un accento testurizzato, coerente con l'estetica tattoo/materica
+@mixin eyebrow {
+  font-family: $font-rough;
+  font-size: $fs-small;
+  letter-spacing: $ls-wide;
+  text-transform: uppercase;
+  color: $color-blood-bright;
+}

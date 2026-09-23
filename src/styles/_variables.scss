@@ -1,0 +1,73 @@
+// =====================================================
+// ENOS — Design tokens (Dark Gothic / Cinematic)
+// Fonte unica di colori, tipografia, spacing, effetti.
+// =====================================================
+
+// --- Colori base -------------------------------------------------
+$color-void:        #08070a;   // nero profondo, background principale
+$color-charcoal:    #131217;   // grigio carbone, superfici
+$color-charcoal-2:  #1c1a21;   // grigio antracite, superfici elevate (card, nav mobile)
+$color-iron:        #322e38;   // bordi / divisori metallici scuri
+$color-iron-soft:   rgba(255, 255, 255, 0.08); // bordo sottile su fondo scuro
+
+$color-blood:        #6e1420;  // bordeaux / rosso sangue, accento primario
+$color-blood-bright: #9c2333;  // rosso sangue più vivo, hover/focus
+$color-blood-glow:   rgba(156, 35, 51, 0.35);
+
+$color-violet-deep: #1a1420;   // viola molto scuro, usato nei gradienti
+
+$color-ivory:      #ece6da;    // bianco sporco/avorio, testo primario
+$color-ivory-dim:  rgba(236, 230, 218, 0.68); // testo secondario
+$color-ivory-faint:rgba(236, 230, 218, 0.4);  // testo terziario / placeholder
+
+$color-gold:        #a9873f;   // metallico discreto, solo per dettagli fini
+
+// --- Tipografia ----------------------------------------------------
+// Font unico di brand in tutto il sito: Brunson (nessun corsivo, nessun serif accessorio)
+$font-display: 'Brunson', 'Arial Narrow', sans-serif;       // titoli, nav, bottoni
+$font-rough:   'Brunson Rough', 'Brunson', 'Arial Narrow', sans-serif; // variante rovinata, per accenti a effetto
+$font-accent:  $font-display; // ex corsivo cinematico: ora stesso font di brand, nessun italic
+$font-body:    $font-display; // testo corrente
+
+$fs-h1: clamp(2.5rem, 6vw, 4.75rem);
+$fs-h2: clamp(1.9rem, 4vw, 3rem);
+$fs-h3: clamp(1.4rem, 2.4vw, 1.9rem);
+$fs-body: clamp(1rem, 1.1vw, 1.125rem);
+$fs-small: 0.875rem;
+
+// Brunson è un condensato/bold: letter-spacing ridotto rispetto a un serif elegante
+$ls-wide: 0.03em;   // letter-spacing per titoli maiuscoli
+$ls-mid: 0.02em;
+
+// --- Spacing scale ---------------------------------------------------
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 1rem;
+$space-4: 1.5rem;
+$space-5: 2.5rem;
+$space-6: 4rem;
+$space-7: 6rem;
+$space-8: 9rem;
+
+// --- Bordi / ombre / transizioni --------------------------------------
+$radius-sm: 2px;
+$radius-md: 4px;
+$radius-lg: 10px;
+
+$shadow-deep: 0 20px 60px rgba(0, 0, 0, 0.55);
+$shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.4);
+$shadow-glow-blood: 0 0 24px $color-blood-glow;
+
+$ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+$dur-fast: 0.2s;
+$dur-base: 0.4s;
+$dur-slow: 0.8s;
+
+// --- Breakpoints -------------------------------------------------------
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-laptop: 1024px;
+$bp-desktop: 1280px;
+$bp-wide: 1600px;
+
+$container-max: 1240px;

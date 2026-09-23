@@ -1,0 +1,48 @@
+<section class="home-hero">
+  <div class="home-hero__media" [class.is-ready]="videoReady">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-hidden="true"
+      (loadeddata)="onVideoReady()"
+      (error)="onVideoError()"
+    >
+      <source src="assets/enos.mp4" type="video/mp4" />
+      Il tuo browser non supporta la riproduzione video.
+    </video>
+
+    <div class="home-hero__fallback" *ngIf="videoFailed"></div>
+  </div>
+
+  <div class="home-hero__text">
+    <span class="home-hero__eyebrow">Blood · Viscera · Bones</span>
+    <h1>ENOS <span class="home-hero__title-sub">— The Leather Mask</span></h1>
+    <p class="home-hero__claim">&laquo;La materia come carne, la carne come reliquia.&raquo;</p>
+    <a routerLink="/opere" class="btn home-hero__cta">Scopri le opere</a>
+  </div>
+
+  <a href="#below-fold" class="home-hero__scroll-cue" aria-label="Scorri per continuare">
+    <span></span>
+  </a>
+</section>
+
+<section id="below-fold" class="home-intro section">
+  <div class="container home-intro__inner">
+    <p class="home-intro__text">
+      Pittura materica, installazione, tattoo e performance che trasformano pelle, sangue,
+      lattice e oggetti del desiderio in altari laici sulla soglia tra eros e morte.
+      Una pratica fisica, emotiva, non mediata: ogni opera è uno scontro brutale con la
+      materia, la carne e se stessi.
+    </p>
+    <div class="divider" aria-hidden="true"></div>
+    <nav class="home-intro__links">
+      <a routerLink="/dipinti" class="btn">Dipinti</a>
+      <a routerLink="/tattoo" class="btn">Tattoo</a>
+      <a routerLink="/performance" class="btn">Performance</a>
+      <a routerLink="/chi-sono" class="btn">Manifesto &amp; Biografia</a>
+    </nav>
+  </div>
+</section>

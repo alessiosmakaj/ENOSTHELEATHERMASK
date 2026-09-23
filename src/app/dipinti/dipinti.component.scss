@@ -1,0 +1,10 @@
+@import 'variables';
+@import 'mixins';
+
+.dipinti-process {
+  padding-top: 0;
+
+  &__inner {
+    max-width: 720px;
+  }
+}

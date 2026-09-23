@@ -1,0 +1,57 @@
+<nav class="navbar">
+  <div class="navbar__container">
+
+    <!-- Sinistra -->
+    <ul class="navbar__links navbar__links--left" *ngIf="!isMobile">
+      <li><a routerLink="/opere" routerLinkActive="active">OPERE</a></li>
+      <li><a routerLink="/dipinti" routerLinkActive="active">DIPINTI</a></li>
+      <li><a routerLink="/tattoo" routerLinkActive="active">TATTOO</a></li>
+      <li><a routerLink="/performance" routerLinkActive="active">PERFORMANCE</a></li>
+    </ul>
+
+    <!-- Logo centrale -->
+    <div class="navbar__logo">
+      <a routerLink="/">
+        <span class="navbar__logo-main">ENOS</span>
+        <span class="navbar__logo-sub">The Leather Mask</span>
+      </a>
+    </div>
+
+    <!-- Destra -->
+    <ul class="navbar__links navbar__links--right" *ngIf="!isMobile">
+      <li><a routerLink="/installazioni" routerLinkActive="active">INSTALLAZIONI</a></li>
+      <li><a routerLink="/video" routerLinkActive="active">VIDEO</a></li>
+      <li><a routerLink="/mostre" routerLinkActive="active">MOSTRE</a></li>
+      <li><a routerLink="/chi-sono" routerLinkActive="active">CHI SONO</a></li>
+    </ul>
+
+    <!-- Hamburger -->
+    <button
+      class="navbar__menu-btn"
+      *ngIf="isMobile"
+      (click)="toggleMenu()"
+      [class.open]="menuOpen"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="Apri menu di navigazione"
+      aria-controls="mobile-menu"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="navbar__mobile-menu" id="mobile-menu" [class.open]="menuOpen && isMobile" [attr.aria-hidden]="!(menuOpen && isMobile)">
+    <ul>
+      <li><a routerLink="/opere" routerLinkActive="active" (click)="closeMenu()">OPERE</a></li>
+      <li><a routerLink="/dipinti" routerLinkActive="active" (click)="closeMenu()">DIPINTI</a></li>
+      <li><a routerLink="/tattoo" routerLinkActive="active" (click)="closeMenu()">TATTOO</a></li>
+      <li><a routerLink="/performance" routerLinkActive="active" (click)="closeMenu()">PERFORMANCE</a></li>
+      <li><a routerLink="/installazioni" routerLinkActive="active" (click)="closeMenu()">INSTALLAZIONI</a></li>
+      <li><a routerLink="/video" routerLinkActive="active" (click)="closeMenu()">VIDEO</a></li>
+      <li><a routerLink="/mostre" routerLinkActive="active" (click)="closeMenu()">MOSTRE</a></li>
+      <li><a routerLink="/chi-sono" routerLinkActive="active" (click)="closeMenu()">CHI SONO</a></li>
+    </ul>
+  </div>
+</nav>

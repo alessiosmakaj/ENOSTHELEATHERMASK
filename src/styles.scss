@@ -1,1 +1,286 @@
-/* You can add global styles to this file, and also import other style files */
+// =====================================================
+// ENOS — Stili globali (Dark Gothic / Cinematic)
+// =====================================================
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+
+// --- Reset base --------------------------------------------------------
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: $color-void;
+  color: $color-ivory;
+  font-family: $font-body;
+  font-size: $fs-body;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+// Il body porta sempre un leggero gradiente verso il viola profondo:
+// dà profondità senza appesantire il nero piatto.
+body {
+  background-image:
+    radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(110, 20, 32, 0.12), transparent 60%),
+    linear-gradient(180deg, $color-void 0%, $color-violet-deep 140%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  color: $color-ivory;
+  margin: 0 0 $space-3;
+  font-weight: 400; // Brunson non ha un peso registrato oltre il regular: evita il grassetto sintetico
+  line-height: 1.1;
+}
+
+h1 { font-size: $fs-h1; letter-spacing: $ls-wide; text-transform: uppercase; }
+h2 { font-size: $fs-h2; letter-spacing: $ls-mid; text-transform: uppercase; }
+h3 { font-size: $fs-h3; letter-spacing: $ls-mid; }
+
+p {
+  margin: 0 0 $space-3;
+  color: $color-ivory-dim;
+}
+
+a {
+  color: $color-ivory;
+  @include focus-ring;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: $font-body;
+  @include focus-ring;
+}
+
+::selection {
+  background: $color-blood;
+  color: $color-ivory;
+}
+
+// Scrollbar discreta e coerente con il tema (Webkit + Firefox)
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $color-iron $color-void;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-void;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-iron;
+  border-radius: $radius-lg;
+  border: 2px solid $color-void;
+
+  &:hover {
+    background: $color-blood;
+  }
+}
+
+// --- Utility condivise tra le pagine ------------------------------------
+
+.container {
+  @include container;
+}
+
+// Header standard per le pagine interne (Opere, Mostre, ecc.)
+.page-header {
+  @include container;
+  @include section-space;
+  padding-bottom: $space-4;
+  text-align: center;
+
+  &__eyebrow {
+    @include eyebrow;
+    display: block;
+    margin-bottom: $space-2;
+  }
+
+  &__title {
+    margin-bottom: $space-3;
+  }
+
+  &__lede {
+    max-width: 640px;
+    margin: 0 auto;
+    font-family: $font-accent;
+    font-size: 1.15rem;
+    color: $color-ivory-dim;
+  }
+}
+
+.divider {
+  @include ornamental-divider;
+  margin-block: $space-5;
+}
+
+// Griglia di card riutilizzabile (opere, installazioni, mostre)
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $space-4;
+}
+
+.card {
+  position: relative;
+  background: linear-gradient(160deg, $color-charcoal-2, $color-charcoal);
+  border: 1px solid $color-iron-soft;
+  border-radius: $radius-md;
+  overflow: hidden;
+  transition: transform $dur-base $ease-cinematic, box-shadow $dur-base $ease-cinematic, border-color $dur-base $ease-cinematic;
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-4px);
+    box-shadow: $shadow-deep;
+    border-color: rgba($color-blood-bright, 0.5);
+  }
+
+  &__media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(ellipse at center, rgba($color-blood, 0.18), transparent 70%),
+      linear-gradient(160deg, #201d24, #100e12);
+    color: $color-ivory-faint;
+
+    svg {
+      width: 34%;
+      height: 34%;
+      opacity: 0.35;
+    }
+  }
+
+  &__body {
+    padding: $space-3 $space-4 $space-4;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1.05rem;
+    letter-spacing: $ls-mid;
+    text-transform: uppercase;
+    margin: 0 0 $space-1;
+    color: $color-ivory;
+  }
+
+  &__meta {
+    font-family: $font-accent;
+    letter-spacing: $ls-mid;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: $color-ivory-faint;
+    margin: 0 0 $space-2;
+  }
+
+  &__desc {
+    font-size: 0.92rem;
+    color: $color-ivory-dim;
+    margin: 0;
+  }
+}
+
+// Bottone standard, coerente in tutto il sito
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  padding: 0.75rem 1.75rem;
+  font-family: $font-display;
+  font-size: 0.85rem;
+  letter-spacing: $ls-mid;
+  text-transform: uppercase;
+  color: $color-ivory;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid rgba($color-ivory, 0.35);
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: border-color $dur-fast ease, background $dur-fast ease, color $dur-fast ease;
+
+  &:hover {
+    border-color: $color-blood-bright;
+    background: rgba($color-blood-bright, 0.12);
+  }
+
+  &--solid {
+    background: $color-blood;
+    border-color: $color-blood;
+
+    &:hover {
+      background: $color-blood-bright;
+      border-color: $color-blood-bright;
+    }
+  }
+}
+
+.section {
+  @include section-space;
+}
+
+.card--soon .card__media {
+  opacity: 0.7;
+}
+
+// Avviso discreto sui contenuti maturi (corpo, sangue, morte), in linea con le linee guida editoriali del brand
+.content-note {
+  @include container;
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  max-width: 640px;
+  margin: 0 auto $space-5;
+  padding: $space-2 $space-3;
+  border: 1px solid $color-iron-soft;
+  border-left: 2px solid $color-blood;
+  border-radius: $radius-sm;
+  background: rgba($color-blood, 0.06);
+  font-family: $font-display;
+  letter-spacing: $ls-mid;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: $color-ivory-faint;
+  text-align: center;
+  justify-content: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

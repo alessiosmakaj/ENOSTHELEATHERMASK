@@ -1,0 +1,20 @@
+// Font di brand: Brunson (display, condensato/atletico) + variante Rough (texture rovinata)
+@font-face {
+  font-family: 'Brunson';
+  src:
+    url('/assets/fonts/Brunson.woff2') format('woff2'),
+    url('/assets/fonts/Brunson.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brunson Rough';
+  src:
+    url('/assets/fonts/Brunson-Rough.woff2') format('woff2'),
+    url('/assets/fonts/Brunson-Rough.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
