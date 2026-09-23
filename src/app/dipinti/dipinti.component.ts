@@ -74,6 +74,14 @@ export class DipintiComponent {
     ].map(f => BASE + f) },
   ];
 
+  // Nasconde la freccia dove non ci sono altre immagini in quella direzione.
+  onStripScroll(event: Event): void {
+    const strip = event.target as HTMLElement;
+    const viewport = strip.parentElement as HTMLElement;
+    viewport.classList.toggle('is-start', strip.scrollLeft <= 2);
+    viewport.classList.toggle('is-end', strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2);
+  }
+
   scrollStrip(event: MouseEvent, direction: 1 | -1): void {
     const strip = (event.currentTarget as HTMLElement)
       .closest('.painting__viewport')

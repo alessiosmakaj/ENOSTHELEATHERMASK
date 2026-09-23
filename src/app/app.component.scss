@@ -1,3 +1,5 @@
+@import 'variables';
+
 .app-shell {
   display: flex;
   flex-direction: column;
@@ -6,5 +8,47 @@
 
   &__content {
     flex: 1 0 auto;
+  }
+}
+
+.to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid $color-iron-soft;
+  background: rgba($color-void, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  color: $color-ivory;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity $dur-base ease, transform $dur-base ease, visibility $dur-base, background $dur-fast ease, border-color $dur-fast ease;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.visible {
+    opacity: 0.85;
+    visibility: visible;
+    transform: none;
+  }
+
+  &:hover {
+    opacity: 1;
+    background: rgba($color-blood, 0.6);
+    border-color: $color-blood-bright;
   }
 }

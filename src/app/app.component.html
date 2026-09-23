@@ -4,4 +4,10 @@
     <router-outlet></router-outlet>
   </main>
   <app-footer></app-footer>
+
+  <button class="to-top" type="button" [class.visible]="showToTop" (click)="toTop()" aria-label="Torna su">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 19V6M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
 </div>

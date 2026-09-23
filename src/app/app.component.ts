@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EnosSite';
+  showToTop = false;
+
+  @HostListener('window:scroll')
+  onScroll(): void {
+    this.showToTop = window.scrollY > 400;
+  }
+
+  toTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

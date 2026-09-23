@@ -74,6 +74,11 @@
     &--next { right: $space-3; }
   }
 
+  &__viewport.is-start &__arrow--prev,
+  &__viewport.is-end &__arrow--next {
+    display: none;
+  }
+
   &__title {
     margin-top: $space-3;
     margin-bottom: $space-1;
