@@ -39,7 +39,7 @@ export class DipintiComponent {
     { title: 'Portale di Sangue', meta: 'Acrilico, sex toys, latex e vetrificante su ecopelle · 130×100 cm · 2025', images: [
       'portale-di-sangue.jpg', 'portale-di-sangue-dettaglio-1.jpg', 'portale-di-sangue-dettaglio-2.jpg', 'portale-di-sangue-dettaglio-3.jpg', 'portale-di-sangue-dettaglio-4.jpg'
     ].map(f => BASE + f) },
-    { title: 'Dominazione Bipolare', meta: '', images: [
+    { title: 'Dominazione Bipolare', meta: 'Acrilico e sex toys su cotone a righe', images: [
       'dominazione-bipolare.jpg', 'dominazione-bipolare-dettaglio-1.jpg', 'dominazione-bipolare-dettaglio-2.jpg', 'dominazione-bipolare-dettaglio-3.jpg'
     ].map(f => BASE + f) },
     { title: 'Marciumenos', meta: 'Sex toys e acrilico su tela · 140×190 cm · 2025', images: [
@@ -54,7 +54,7 @@ export class DipintiComponent {
     { title: 'Speranza Annegata', meta: 'Acrilico, sex toys, latex, vetrificante e polaroid · 130 cm · 2025', images: [
       'speranza-annegata.jpg', 'speranza-annegata-dettaglio-1.jpg'
     ].map(f => BASE + f) },
-    { title: 'Lofiforme', meta: '', images: [
+    { title: 'Lofiforme', meta: 'Acrilico e vernice su cotone a righe', images: [
       'lofiforme.jpg', 'lofiforme-dettaglio-1.jpg', 'lofiforme-dettaglio-2.jpg'
     ].map(f => BASE + f) },
     { title: 'Fognenos', meta: 'Acrilico e sex toys su tela · 160×260 cm · 2025', images: [
