@@ -23,9 +23,9 @@ export class OpereComponent {
       meta: 'Acrilico, sangue, viscere · 160×180 cm · 2025',
       desc: 'Eros e thanatos non si oppongono ma si contaminano: un letto di ricordi morti, ancora desideranti.'
     },
-    { title: 'Dieselenos',    meta: 'Opera del corpus Blood Viscera Bones', desc: 'Dal lessico della decadenza: il device «-enos» applicato alla materia.' },
+    { title: 'Dieselenos',    meta: 'Opera del corpus Blood Viscera Bones', desc: 'Nel lessico della decadenza, il device «-enos» applicato alla materia.' },
     { title: 'Labirintenos',  meta: 'Opera del corpus Blood Viscera Bones', desc: 'Un percorso a soglie multiple, tra identità e ombra.' },
-    { title: 'Fognenos',      meta: 'Opera del corpus Blood Viscera Bones', desc: 'Dal lessico della decadenza: fogna e rovina come autoritratto frammentato.' },
+    { title: 'Fognenos',      meta: 'Opera del corpus Blood Viscera Bones', desc: 'Fogna e rovina, autoritratto frammentato nel lessico della decadenza.' },
     { title: 'Marciumenos',   meta: 'Opera del corpus Blood Viscera Bones', desc: 'Materia lasciata decadere e cicatrizzare, tra rottura e rinascita.' },
   ];
 }

@@ -21,6 +21,9 @@
     max-width: $container-max;
     margin: 0 auto;
     padding: 0 $space-4;
+    // Garantisce spazio sufficiente al logo (due righe, ~61px) anche quando
+    // le liste di link non sono nel DOM (mobile) e il contenitore altrimenti collasserebbe.
+    min-height: 4.25rem;
   }
 
   &__logo {
@@ -202,8 +205,13 @@
   .navbar {
     padding: 1.1rem 0;
 
-    &__logo {
-      font-size: 1.3rem;
+    &__container {
+      // Solo "ENOS" resta in mobile: il contenitore può essere più basso.
+      min-height: 3rem;
+    }
+
+    &__logo-sub {
+      display: none;
     }
 
     &__menu-btn {
