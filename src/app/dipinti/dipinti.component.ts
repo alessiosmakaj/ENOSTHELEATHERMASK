@@ -37,4 +37,11 @@ export class DipintiComponent {
       'morte-in-diretta.jpg', 'morte-in-diretta-dettaglio-1.jpg', 'morte-in-diretta-dettaglio-2.jpg', 'morte-in-diretta-dettaglio-3.jpg'
     ].map(f => BASE + f) },
   ];
+
+  scrollStrip(event: MouseEvent, direction: 1 | -1): void {
+    const strip = (event.currentTarget as HTMLElement)
+      .closest('.painting__viewport')
+      ?.querySelector('.painting__strip') as HTMLElement | null;
+    strip?.scrollBy({ left: direction * strip.clientWidth, behavior: 'smooth' });
+  }
 }

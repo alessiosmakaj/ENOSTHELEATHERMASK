@@ -16,31 +16,62 @@
 }
 
 .painting {
+  &__viewport {
+    position: relative;
+  }
+
   &__strip {
     display: flex;
-    gap: $space-2;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    border-radius: $radius-md;
-    background: $color-void;
 
-    // scrollbar discreta, coerente col tema
-    scrollbar-width: thin;
-    scrollbar-color: $color-iron $color-void;
-    &::-webkit-scrollbar { height: 8px; }
-    &::-webkit-scrollbar-thumb { background: $color-iron; border-radius: $radius-lg; }
+    // scrollbar nascosta: la navigazione desktop passa dalle frecce
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
   }
 
+  // Altezza uniforme per ogni opera: dipinti verticali e orizzontali si
+  // centrano tutti allo stesso modo, senza bande di colore diverso dallo
+  // sfondo nativo della pagina (nessun riempimento/bordo sul singolo slide).
   &__slide {
     flex: 0 0 100%;
     scroll-snap-align: start;
-    max-height: 78vh;
+    height: 70vh;
+    max-height: 720px;
     width: 100%;
     object-fit: contain;
-    background: $color-void;
+    object-position: center;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     border: 1px solid $color-iron-soft;
-    border-radius: $radius-md;
+    background: rgba($color-void, 0.55);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    color: $color-ivory;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity $dur-fast ease, background $dur-fast ease;
+
+    svg { width: 20px; height: 20px; }
+
+    &:hover {
+      opacity: 1;
+      background: rgba($color-blood, 0.55);
+    }
+
+    &--prev { left: $space-3; }
+    &--next { right: $space-3; }
   }
 
   &__title {
@@ -57,5 +88,18 @@
     font-size: 0.8rem;
     color: $color-ivory-faint;
     margin: 0;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .painting {
+    &__slide {
+      height: 56vh;
+    }
+
+    // Sotto i 768px lo swipe è touch nativo: le frecce non servono.
+    &__arrow {
+      display: none;
+    }
   }
 }
