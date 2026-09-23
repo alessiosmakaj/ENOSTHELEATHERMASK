@@ -33,3 +33,11 @@
     border-bottom: 1px solid $color-iron-soft;
   }
 }
+
+.video-intro {
+  padding-top: 0;
+
+  &__inner {
+    max-width: 720px;
+  }
+}
