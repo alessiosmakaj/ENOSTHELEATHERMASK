@@ -1,29 +1,10 @@
-<header class="page-header">
-  <span class="page-header__eyebrow">Il corpus</span>
-  <h1 class="page-header__title">Opere</h1>
-  <p class="page-header__lede">Blood Viscera Bones: il catalogo delle opere, tra pittura materica, installazione e corpo.</p>
-</header>
-
-<p class="content-note">Opere a tema maturo — corpo, sangue, morte e rinascita — in chiave critico-artistica.</p>
-
-<section class="section">
-  <div class="container">
-    <div class="card-grid">
-      <article class="card" *ngFor="let opera of opere">
-        <div class="card__media">
-          <svg viewBox="0 0 100 120" focusable="false" aria-hidden="true">
-            <path d="M50 4C27 4 12 22 12 46c0 20 10 34 10 34 4 20 14 32 28 32s24-12 28-32c0 0 10-14 10-34C88 22 73 4 50 4Z"
-                  fill="none" stroke="currentColor" stroke-width="1.4"/>
-            <circle cx="36" cy="48" r="3.2" fill="currentColor"/>
-            <circle cx="64" cy="48" r="3.2" fill="currentColor"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">{{ opera.title }}</h3>
-          <p class="card__meta">{{ opera.meta }}</p>
-          <p class="card__desc">{{ opera.desc }}</p>
-        </div>
-      </article>
-    </div>
-  </div>
+<section class="choice-grid">
+  <a routerLink="/dipinti" class="choice" aria-label="Dipinti">
+    <img class="choice__bg" src="assets/opere/dipinti.jpg" alt="">
+    <span class="choice__label">Dipinti</span>
+  </a>
+  <a routerLink="/installazioni" class="choice" aria-label="Installazioni">
+    <img class="choice__bg" src="assets/opere/installazioni.jpg" alt="">
+    <span class="choice__label">Installazioni</span>
+  </a>
 </section>

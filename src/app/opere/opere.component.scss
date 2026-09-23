@@ -1,0 +1,52 @@
+@import 'variables';
+@import 'mixins';
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100dvh - 4.5rem);
+}
+
+.choice {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+  color: $color-ivory;
+  min-height: 40dvh;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45);
+    transition: transform 0.9s $ease-cinematic, filter $dur-base ease;
+  }
+
+  &__label {
+    position: relative;
+    z-index: 1;
+    font-family: $font-display;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    letter-spacing: $ls-wide;
+    text-transform: uppercase;
+    text-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
+  }
+
+  &:hover &__bg,
+  &:focus-visible &__bg {
+    transform: scale(1.08);
+    filter: brightness(0.6);
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .choice-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}

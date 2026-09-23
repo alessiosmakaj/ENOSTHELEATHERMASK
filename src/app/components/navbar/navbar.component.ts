@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,13 @@ import { Component, HostListener } from '@angular/core';
 export class NavbarComponent {
   menuOpen = false;
   isMobile = window.innerWidth <= 768;
+
+  constructor(private router: Router) {}
+
+  // OPERE resta evidenziato anche nelle sotto-sezioni Dipinti e Installazioni
+  isOpereSection(): boolean {
+    return /^\/(opere|dipinti|installazioni)/.test(this.router.url);
+  }
 
   @HostListener('window:resize')
   onResize() {
