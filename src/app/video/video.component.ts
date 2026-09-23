@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./video.component.scss']
 })
 export class VideoComponent {
-  readonly placeholders = [1, 2, 3];
+  readonly sections = [
+    { title: 'AI', showcase: false },
+    { title: 'Cortometraggi', showcase: true },
+  ];
 }

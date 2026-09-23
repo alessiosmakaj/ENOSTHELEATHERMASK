@@ -1,6 +1,7 @@
 <section class="home-hero">
   <div class="home-hero__media" [class.is-ready]="videoReady">
     <video
+      #heroVideo
       autoplay
       muted
       loop
@@ -8,6 +9,7 @@
       preload="auto"
       aria-hidden="true"
       (loadeddata)="onVideoReady()"
+      (canplay)="play()"
       (error)="onVideoError()"
     >
       <source src="assets/enos.mp4" type="video/mp4" />

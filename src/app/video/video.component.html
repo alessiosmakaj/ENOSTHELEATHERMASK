@@ -4,9 +4,11 @@
   <p class="page-header__lede">Il processo creativo e le opere raccontati in movimento.</p>
 </header>
 
-<section class="section">
+<section class="section video-section" *ngFor="let s of sections">
   <div class="container">
-    <figure class="video-showcase">
+    <h2 class="video-section__title">{{ s.title }}</h2>
+
+    <figure class="video-showcase" *ngIf="s.showcase">
       <video controls preload="metadata" playsinline>
         <source src="assets/enos.mp4" type="video/mp4" />
         Il tuo browser non supporta la riproduzione video.
@@ -14,10 +16,8 @@
       <figcaption class="video-showcase__caption">ENOS — The Leather Mask</figcaption>
     </figure>
 
-    <div class="divider" aria-hidden="true"></div>
-
     <div class="card-grid">
-      <article class="card card--soon" *ngFor="let p of placeholders">
+      <article class="card card--soon" *ngFor="let p of [1, 2]">
         <div class="card__media">
           <svg viewBox="0 0 100 100" focusable="false" aria-hidden="true">
             <polygon points="40,30 40,70 72,50" fill="currentColor" />

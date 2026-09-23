@@ -23,3 +23,13 @@
     color: $color-ivory-faint;
   }
 }
+
+.video-section {
+  padding-block: $space-5;
+
+  &__title {
+    margin-bottom: $space-4;
+    padding-bottom: $space-2;
+    border-bottom: 1px solid $color-iron-soft;
+  }
+}
