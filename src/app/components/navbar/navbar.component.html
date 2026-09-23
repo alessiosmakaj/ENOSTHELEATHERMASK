@@ -4,7 +4,6 @@
     <!-- Sinistra -->
     <ul class="navbar__links navbar__links--left" *ngIf="!isMobile">
       <li><a routerLink="/opere" [class.active]="isOpereSection()">OPERE</a></li>
-      <li><a routerLink="/tattoo" routerLinkActive="active">TATTOO</a></li>
       <li><a routerLink="/performance" routerLinkActive="active">PERFORMANCE</a></li>
     </ul>
 
@@ -43,7 +42,6 @@
   <div class="navbar__mobile-menu" id="mobile-menu" [class.open]="menuOpen && isMobile" [attr.aria-hidden]="!(menuOpen && isMobile)">
     <ul>
       <li><a routerLink="/opere" [class.active]="isOpereSection()" (click)="closeMenu()">OPERE</a></li>
-      <li><a routerLink="/tattoo" routerLinkActive="active" (click)="closeMenu()">TATTOO</a></li>
       <li><a routerLink="/performance" routerLinkActive="active" (click)="closeMenu()">PERFORMANCE</a></li>
       <li><a routerLink="/video" routerLinkActive="active" (click)="closeMenu()">VIDEO</a></li>
       <li><a routerLink="/mostre" routerLinkActive="active" (click)="closeMenu()">MOSTRE</a></li>

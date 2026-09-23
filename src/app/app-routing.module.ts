@@ -6,7 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { OpereComponent } from './opere/opere.component';
 import { DipintiComponent } from './dipinti/dipinti.component';
-import { TattooComponent } from './tattoo/tattoo.component';
 import { InstallazioniComponent } from './installazioni/installazioni.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { VideoComponent } from './video/video.component';
@@ -17,7 +16,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent }, // Home di default
   { path: 'opere', component: OpereComponent },
   { path: 'dipinti', component: DipintiComponent },
-  { path: 'tattoo', component: TattooComponent },
+  { path: 'tattoo', redirectTo: 'performance' },
   { path: 'installazioni', component: InstallazioniComponent },
   { path: 'performance', component: PerformanceComponent },
   { path: 'video', component: VideoComponent },

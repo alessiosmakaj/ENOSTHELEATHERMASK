@@ -13,7 +13,6 @@ import { InstallazioniComponent } from './installazioni/installazioni.component'
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DipintiComponent } from './dipinti/dipinti.component';
-import { TattooComponent } from './tattoo/tattoo.component';
 import { PerformanceComponent } from './performance/performance.component';
 
 @NgModule({
@@ -28,7 +27,6 @@ import { PerformanceComponent } from './performance/performance.component';
     NavbarComponent,
     FooterComponent,
     DipintiComponent,
-    TattooComponent,
     PerformanceComponent
   ],
   imports: [

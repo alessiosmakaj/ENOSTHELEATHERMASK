@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './performance.component.html',
   styleUrls: ['./performance.component.scss']
 })
-export class PerformanceComponent {
-  readonly placeholders = [1, 2, 3, 4];
-}
+export class PerformanceComponent {}

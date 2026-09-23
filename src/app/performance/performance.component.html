@@ -6,24 +6,20 @@
 
 <p class="content-note">Opere a tema maturo — corpo, sangue, morte e rinascita — in chiave critico-artistica.</p>
 
-<section class="section performance-intro">
-  <div class="container performance-intro__inner">
-    <p>
-      La pratica performativa di Enos intreccia l'eredità dell'Azionismo viennese —
-      corpo, sangue, liturgia profanata — al tatuaggio: la pelle come superficie e
-      soggetto insieme. Rituale e confessionale, materico e narrativo: due eredità che
-      spiegano perché il gesto resta cerimonia, e la mano che affronta la materia dal
-      vivo resta diretta, feroce.
-    </p>
-    <div class="divider" aria-hidden="true"></div>
-    <a routerLink="/chi-sono" fragment="contatti" class="btn btn--solid">Richiedi informazioni</a>
-  </div>
-</section>
-
-<section class="section">
+<section class="section perf-section">
   <div class="container">
+    <h2 class="perf-section__title">Performance</h2>
+    <div class="perf-section__text">
+      <p>
+        La pratica performativa di Enos intreccia l'eredità dell'Azionismo viennese —
+        corpo, sangue, liturgia profanata — al tatuaggio: la pelle come superficie e
+        soggetto insieme. Rituale e confessionale, materico e narrativo: due eredità che
+        spiegano perché il gesto resta cerimonia, e la mano che affronta la materia dal
+        vivo resta diretta, feroce.
+      </p>
+    </div>
     <div class="card-grid">
-      <article class="card card--soon" *ngFor="let p of placeholders">
+      <article class="card card--soon" *ngFor="let p of [1, 2]">
         <div class="card__media">
           <svg viewBox="0 0 100 100" focusable="false" aria-hidden="true">
             <path d="M50 10 L58 40 L90 40 L64 58 L74 90 L50 70 L26 90 L36 58 L10 40 L42 40 Z"
@@ -36,5 +32,44 @@
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="section perf-section" id="tattoo">
+  <div class="container">
+    <h2 class="perf-section__title">Tattoo</h2>
+    <div class="perf-section__text">
+      <p>
+        Ridurre Enos a un pittore sarebbe un errore. Il tatuaggio è la forma più letterale
+        del suo principio — la pelle come supporto definitivo — e la performance ne è
+        l'estensione dal vivo: un attraversamento del limite davanti a un pubblico chiamato
+        a essere testimone, più che spettatore.
+      </p>
+      <p>
+        Negli anni questa pratica lo ha portato in club, festival e convention, costruendo una
+        comunità che riconosce nel suo linguaggio qualcosa di necessario.
+      </p>
+    </div>
+    <div class="card-grid">
+      <article class="card card--soon" *ngFor="let p of [1, 2]">
+        <div class="card__media">
+          <svg viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+            <path d="M50 12c-4 10-18 14-18 30 0 12 8 20 18 20s18-8 18-20c0-16-14-20-18-30Z"
+                  fill="none" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M50 40v28" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Prossimamente</h3>
+          <p class="card__desc">Nuovi lavori in aggiunta al portfolio tattoo.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section perf-cta">
+  <div class="container">
+    <a routerLink="/chi-sono" fragment="contatti" class="btn btn--solid">Richiedi informazioni</a>
   </div>
 </section>

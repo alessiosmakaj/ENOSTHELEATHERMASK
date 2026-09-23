@@ -1,11 +1,22 @@
 @import 'variables';
 @import 'mixins';
 
-.performance-intro {
+.perf-section {
+  padding-block: $space-5;
+
+  &__title {
+    margin-bottom: $space-4;
+    padding-bottom: $space-2;
+    border-bottom: 1px solid $color-iron-soft;
+  }
+
+  &__text {
+    max-width: 680px;
+    margin-bottom: $space-5;
+  }
+}
+
+.perf-cta {
   padding-top: 0;
   text-align: center;
-
-  &__inner {
-    max-width: 680px;
-  }
 }
