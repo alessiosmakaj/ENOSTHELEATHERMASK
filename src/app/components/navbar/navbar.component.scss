@@ -114,8 +114,11 @@
 
     // Sinistra: vicine al logo. Destra: vicine al logo, con l'ultima voce
     // (PERSONA) spinta al bordo destro.
+    // Il gruppo sinistro è più largo (PERFORMANCE): lo avvicino un po' al logo
+    // perché a colpo d'occhio risulti speculare a VIDEO / MOSTRE.
     &--left {
       justify-self: end;
+      margin-right: -0.9rem;
     }
 
     &--right li:last-child {
