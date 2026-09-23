@@ -75,6 +75,7 @@
 }
 
 .contact {
+  scroll-margin-top: 5rem; // sotto la navbar sticky quando si arriva da #contatti
   border-top: 1px solid $color-iron-soft;
 
   .page-header__eyebrow {

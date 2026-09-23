@@ -54,6 +54,11 @@ h1 { font-size: $fs-h1; letter-spacing: $ls-wide; text-transform: uppercase; }
 h2 { font-size: $fs-h2; letter-spacing: $ls-mid; text-transform: uppercase; }
 h3 { font-size: $fs-h3; letter-spacing: $ls-mid; }
 
+// Brunson non ha un corsivo: niente slant sintetico
+em, i {
+  font-style: normal;
+}
+
 p {
   margin: 0 0 $space-3;
   color: $color-ivory-dim;
