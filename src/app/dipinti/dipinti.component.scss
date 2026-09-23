@@ -8,3 +8,54 @@
     max-width: 720px;
   }
 }
+
+.painting-list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.painting {
+  &__strip {
+    display: flex;
+    gap: $space-2;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    border-radius: $radius-md;
+    background: $color-void;
+
+    // scrollbar discreta, coerente col tema
+    scrollbar-width: thin;
+    scrollbar-color: $color-iron $color-void;
+    &::-webkit-scrollbar { height: 8px; }
+    &::-webkit-scrollbar-thumb { background: $color-iron; border-radius: $radius-lg; }
+  }
+
+  &__slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    max-height: 78vh;
+    width: 100%;
+    object-fit: contain;
+    background: $color-void;
+    border: 1px solid $color-iron-soft;
+    border-radius: $radius-md;
+  }
+
+  &__title {
+    margin-top: $space-3;
+    margin-bottom: $space-1;
+    text-align: center;
+  }
+
+  &__meta {
+    text-align: center;
+    font-family: $font-accent;
+    letter-spacing: $ls-mid;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: $color-ivory-faint;
+    margin: 0;
+  }
+}

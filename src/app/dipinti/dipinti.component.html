@@ -25,21 +25,13 @@
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="card-grid">
-      <article class="card" *ngFor="let opera of dipinti">
-        <div class="card__media">
-          <svg viewBox="0 0 100 100" focusable="false" aria-hidden="true">
-            <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
-            <circle cx="50" cy="58" r="10" fill="none" stroke="currentColor" stroke-width="1.2"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">{{ opera.title }}</h3>
-          <p class="card__meta">{{ opera.meta }}</p>
-          <p class="card__desc">{{ opera.desc }}</p>
-        </div>
-      </article>
-    </div>
+  <div class="container painting-list">
+    <article class="painting" *ngFor="let p of paintings">
+      <div class="painting__strip">
+        <img *ngFor="let src of p.images" [src]="src" [alt]="p.title" class="painting__slide" loading="lazy">
+      </div>
+      <h3 class="painting__title">{{ p.title }}</h3>
+      <p class="painting__meta">Pittura materica · {{ p.year }}</p>
+    </article>
   </div>
 </section>
