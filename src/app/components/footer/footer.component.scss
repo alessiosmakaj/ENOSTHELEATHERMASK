@@ -33,7 +33,7 @@
     span {
       font-family: $font-accent;
       text-transform: uppercase;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       letter-spacing: 0.06em;
       color: $color-ivory-faint;
       margin-left: $space-1;
@@ -52,13 +52,13 @@
     font-family: $font-accent;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: $color-ivory-faint;
     margin: 0;
   }
 
   &__email {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: $color-ivory-dim;
     text-decoration: none;
     width: fit-content;
@@ -78,7 +78,7 @@
       color: $color-ivory-dim;
       text-decoration: none;
       font-family: $font-display;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       letter-spacing: 0.02em;
       transition: color $dur-fast ease;
 

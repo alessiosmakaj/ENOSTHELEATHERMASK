@@ -17,8 +17,8 @@ $color-blood-glow:   rgba(156, 35, 51, 0.35);
 $color-violet-deep: #1a1420;   // viola molto scuro, usato nei gradienti
 
 $color-ivory:      #ece6da;    // bianco sporco/avorio, testo primario
-$color-ivory-dim:  rgba(236, 230, 218, 0.68); // testo secondario
-$color-ivory-faint:rgba(236, 230, 218, 0.4);  // testo terziario / placeholder
+$color-ivory-dim:  rgba(236, 230, 218, 0.9); // testo secondario
+$color-ivory-faint:rgba(236, 230, 218, 0.68);  // testo terziario / placeholder
 
 $color-gold:        #a9873f;   // metallico discreto, solo per dettagli fini
 
@@ -32,8 +32,8 @@ $font-body:    $font-display; // testo corrente
 $fs-h1: clamp(2.5rem, 6vw, 4.75rem);
 $fs-h2: clamp(1.9rem, 4vw, 3rem);
 $fs-h3: clamp(1.4rem, 2.4vw, 1.9rem);
-$fs-body: clamp(1rem, 1.1vw, 1.125rem);
-$fs-small: 0.875rem;
+$fs-body: clamp(1.1rem, 1.25vw, 1.3rem);
+$fs-small: 0.95rem;
 
 // Brunson è un condensato/bold: letter-spacing ridotto rispetto a un serif elegante
 $ls-wide: 0.03em;   // letter-spacing per titoli maiuscoli

@@ -24,7 +24,7 @@ body {
   color: $color-ivory;
   font-family: $font-body;
   font-size: $fs-body;
-  line-height: 1.65;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -131,7 +131,7 @@ html {
     max-width: 640px;
     margin: 0 auto;
     font-family: $font-accent;
-    font-size: 1.15rem;
+    font-size: 1.35rem;
     color: $color-ivory-dim;
   }
 }
@@ -198,13 +198,13 @@ html {
     font-family: $font-accent;
     letter-spacing: $ls-mid;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.92rem;
     color: $color-ivory-faint;
     margin: 0 0 $space-2;
   }
 
   &__desc {
-    font-size: 0.92rem;
+    font-size: 1.05rem;
     color: $color-ivory-dim;
     margin: 0;
   }
@@ -268,7 +268,7 @@ html {
   font-family: $font-display;
   letter-spacing: $ls-mid;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: $color-ivory-faint;
   text-align: center;
   justify-content: center;

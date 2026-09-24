@@ -101,7 +101,7 @@
 
   &__label {
     font-family: $font-rough;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: $ls-wide;
     text-transform: uppercase;
     color: $color-ivory-faint;
@@ -116,7 +116,7 @@
     transition: color $dur-fast ease;
 
     &--muted {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       color: $color-ivory-dim;
     }
   }
