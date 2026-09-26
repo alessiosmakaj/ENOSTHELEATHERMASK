@@ -6,10 +6,7 @@
   background: rgba(8, 7, 10, 0.82);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 1.5rem 0;
+  padding: 0.7rem 0;
   border-bottom: 1px solid $color-iron-soft;
   transition: padding $dur-base $ease-cinematic;
 
@@ -24,7 +21,7 @@
     padding: 0 $space-4;
     // Garantisce spazio sufficiente al logo (due righe, ~61px) anche quando
     // le liste di link non sono nel DOM (mobile) e il contenitore altrimenti collasserebbe.
-    min-height: 4.25rem;
+    min-height: 2.9rem;
   }
 
   &__logo {
@@ -54,14 +51,16 @@
 
   &__logo-main {
     font-family: $font-display;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    line-height: 1.15;
     letter-spacing: $ls-wide;
   }
 
   &__logo-sub {
     font-family: $font-accent;
     text-transform: uppercase;
-    font-size: 0.65rem;
+    font-size: 0.58rem;
+    line-height: 1.2;
     letter-spacing: 0.1em;
     color: $color-ivory-faint;
     transition: color $dur-fast ease;
@@ -79,9 +78,9 @@
       text-decoration: none;
       color: $color-ivory-dim;
       font-family: $font-display;
-      font-size: 1rem;
+      font-size: 0.92rem;
       letter-spacing: $ls-mid;
-      padding: 0.5rem 0.1rem;
+      padding: 0.35rem 0.1rem;
       transition: color $dur-fast ease;
 
       &::after {
@@ -214,11 +213,11 @@
 
 @media (max-width: $bp-tablet) {
   .navbar {
-    padding: 1.1rem 0;
+    padding: 0.55rem 0;
 
     &__container {
       // Solo "ENOS" resta in mobile: il contenitore può essere più basso.
-      min-height: 3rem;
+      min-height: 2.2rem;
     }
 
     &__logo-sub {

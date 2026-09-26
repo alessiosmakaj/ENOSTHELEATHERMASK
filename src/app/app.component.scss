@@ -1,5 +1,14 @@
 @import 'variables';
 
+// L'host <app-navbar> è il vero elemento sticky: dentro il proprio host la navbar
+// non avrebbe spazio per "restare" durante lo scroll.
+app-navbar {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .app-shell {
   display: flex;
   flex-direction: column;
