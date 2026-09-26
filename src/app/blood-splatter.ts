@@ -44,7 +44,6 @@ function ensureCanvas(): void {
 }
 
 export function splatBlood(x: number, y: number, oil = false): void {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
   ensureCanvas();
   const born = performance.now();
   const palette = oil ? OIL_COLORS : COLORS;
