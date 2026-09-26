@@ -33,40 +33,21 @@
   </div>
 </section>
 
-<section class="section mask-list">
-  <div class="container mask-list__inner">
-    <h2 class="mask-list__title">Collezione di maschere</h2>
-    <ul class="mask-list__names">
-      <li><span class="mask-name">Boia</span></li>
-      <li><span class="mask-name">Mohawk<span class="mask-caps">Enos</span></span></li>
-      <li><span class="mask-name">Spik<span class="mask-caps">Enos</span></span></li>
-      <li><span class="mask-name">Distopic<span class="mask-caps">Enos</span></span></li>
-      <li><span class="mask-name">Dr.<span class="mask-caps">Enos</span></span></li>
-      <li><span class="mask-name">Sicari<span class="mask-caps">Enos</span></span></li>
-      <li><span class="mask-name">Visionari<span class="mask-caps">Enos</span></span></li>
-      <li><span class="mask-name">Tribal<span class="mask-caps">Enos</span></span></li>
-      <li><span class="mask-name"><span class="mask-caps">Enos</span> Fend<span class="mask-caps">Enos</span> Coccodrill<span class="mask-caps">Enos</span></span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section">
+<section class="section mask-carousel">
   <div class="container">
-    <div class="card-grid">
-      <article class="card card--soon" *ngFor="let p of [1, 2, 3]">
-        <div class="card__media">
-          <svg viewBox="0 0 100 120" focusable="false" aria-hidden="true">
-            <path d="M50 4C27 4 12 22 12 46c0 20 10 34 10 34 4 20 14 32 28 32s24-12 28-32c0 0 10-14 10-34C88 22 73 4 50 4Z"
-                  fill="none" stroke="currentColor" stroke-width="1.4"/>
-            <circle cx="36" cy="48" r="3.2" fill="currentColor"/>
-            <circle cx="64" cy="48" r="3.2" fill="currentColor"/>
-          </svg>
-        </div>
-        <div class="card__body">
-          <h3 class="card__title">Prossimamente</h3>
-          <p class="card__desc">Nuove maschere in aggiunta alla collezione.</p>
-        </div>
-      </article>
+    <h2 class="mask-carousel__title">MohawkEnos</h2>
+    <div class="mask-carousel__viewport is-start">
+      <div class="mask-carousel__strip" (scroll)="onCarouselScroll($event)">
+        <img *ngFor="let src of mohawkImages" [src]="src" alt="MohawkEnos" class="mask-carousel__slide" loading="lazy">
+      </div>
+      <ng-container *ngIf="mohawkImages.length > 1">
+        <button class="mask-carousel__arrow mask-carousel__arrow--prev" (click)="scrollCarousel($event, -1)" aria-label="Immagine precedente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="mask-carousel__arrow mask-carousel__arrow--next" (click)="scrollCarousel($event, 1)" aria-label="Immagine successiva">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </ng-container>
     </div>
   </div>
 </section>
