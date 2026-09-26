@@ -23,7 +23,7 @@ export class AppComponent {
   @HostListener('document:click', ['$event'])
   onDocumentClick(e: MouseEvent): void {
     const t = e.target as Node | null;
-    const el = (t instanceof Element ? t : t?.parentElement)?.closest('.btn, [data-blood]');
+    const el = (t instanceof Element ? t : t?.parentElement)?.closest('.btn:not([data-no-blood]), [data-blood]');
     if (!el) { return; }
     const oil = el.getAttribute('data-blood') === 'oil';
     if (e.detail === 0) {
