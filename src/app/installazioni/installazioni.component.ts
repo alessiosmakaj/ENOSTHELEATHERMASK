@@ -27,7 +27,9 @@ export class InstallazioniComponent {
     { title: 'Martirenos', meta: 'Acrilico, spray, poliuretano e Dr. Martens · 2024', images: [BASE + 'martirenos.jpg'] },
     { title: 'Mazzaferratenos', meta: 'Acrilico, sex toys, spray, catene e maschera · 2024', images: [BASE + 'mazzaferratenos.jpg'] },
     { title: 'Kromosenos', meta: 'Acrilico, sex toys, lamiera e neon su forex · 2023', images: [BASE + 'kromosenos.jpg'] },
-    { title: 'Crocenos 01', meta: '2023', images: [BASE + 'crocenos-01.jpg'] },
+    { title: 'Crocenos 01', meta: 'Acrilico e sex toys su ecopelle · 2023', images: [
+      'crocenos-01.jpg', 'crocenos-02.jpg', 'crocenos-03.jpg', 'crocenos-04.jpg'
+    ].map(f => BASE + f) },
     { title: 'Senza titolo', meta: 'Spray marker e sex toys su cartello stradale · 2022', images: [BASE + 'cartello-2022.jpg'] },
   ];
 
