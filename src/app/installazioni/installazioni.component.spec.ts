@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InstallazioniComponent } from './installazioni.component';
+import { SwipeHintDirective } from '../swipe-hint.directive';
 
 describe('InstallazioniComponent', () => {
   let component: InstallazioniComponent;
@@ -8,7 +9,7 @@ describe('InstallazioniComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InstallazioniComponent]
+      declarations: [InstallazioniComponent, SwipeHintDirective]
     });
     fixture = TestBed.createComponent(InstallazioniComponent);
     component = fixture.componentInstance;

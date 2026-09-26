@@ -38,7 +38,7 @@
     <h2 class="mask-carousel__title">{{ m.title }}</h2>
     <div class="mask-carousel__viewport is-start" [appSwipeHint]="m.images.length > 1">
       <div class="mask-carousel__strip" (scroll)="onCarouselScroll($event)">
-        <img *ngFor="let src of m.images" [src]="src" [alt]="m.title" class="mask-carousel__slide" loading="lazy">
+        <img *ngFor="let src of m.images" [src]="src" [alt]="m.title" class="mask-carousel__slide" loading="lazy" decoding="async">
       </div>
       <ng-container *ngIf="m.images.length > 1">
         <button class="mask-carousel__arrow mask-carousel__arrow--prev" (click)="scrollCarousel($event, -1)" aria-label="Immagine precedente">

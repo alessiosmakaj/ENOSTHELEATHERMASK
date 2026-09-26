@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, NgZone } from '@angular/core';
 import { splatBlood } from './blood-splatter';
 
 @Component({
@@ -10,9 +10,14 @@ export class AppComponent {
   title = 'EnosSite';
   showToTop = false;
 
-  @HostListener('window:scroll')
-  onScroll(): void {
-    this.showToTop = window.scrollY > 400;
+  // Lo scroll gira fuori da Angular: la change detection parte solo quando il pulsante deve davvero comparire o sparire.
+  constructor(zone: NgZone) {
+    zone.runOutsideAngular(() => {
+      window.addEventListener('scroll', () => {
+        const show = window.scrollY > 400;
+        if (show !== this.showToTop) { zone.run(() => (this.showToTop = show)); }
+      }, { passive: true });
+    });
   }
 
   @HostListener('document:click', ['$event'])

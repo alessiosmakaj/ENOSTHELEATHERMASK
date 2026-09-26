@@ -63,7 +63,8 @@ function ensureCanvas(): void {
     document.body.appendChild(canvas);
     ctx = canvas.getContext('2d');
   }
-  const dpr = window.devicePixelRatio || 1;
+  canvas.style.display = 'block';
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
   const w = Math.round(window.innerWidth * dpr);
   const h = Math.round(window.innerHeight * dpr);
   if (canvas.width !== w || canvas.height !== h) {
@@ -162,7 +163,7 @@ function drawDrip(c: CanvasRenderingContext2D, d: Drip, age: number): void {
 
 function frame(now: number): void {
   const c = ctx!;
-  const dpr = window.devicePixelRatio || 1;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
   const f = Math.min((now - last) / 16.67, 3);
   last = now;
   c.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -263,5 +264,7 @@ function frame(now: number): void {
   } else {
     running = false;
     c.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    // A riposo il canvas a schermo intero non deve restare come livello composito.
+    canvas!.style.display = 'none';
   }
 }

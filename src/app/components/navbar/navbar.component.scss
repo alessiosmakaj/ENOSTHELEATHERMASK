@@ -4,8 +4,8 @@
 .navbar {
   width: 100%;
   background: rgba(8, 7, 10, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   padding: 0.7rem 0;
   border-bottom: 1px solid $color-iron-soft;
   transition: padding $dur-base $ease-cinematic;
@@ -213,6 +213,10 @@
 
 @media (max-width: $bp-tablet) {
   .navbar {
+    // Su mobile il blur sticky è la cosa più costosa da ridisegnare durante lo scroll: sfondo quasi opaco al suo posto.
+    background: rgba(8, 7, 10, 0.94);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     padding: 0.55rem 0;
 
     &__container {

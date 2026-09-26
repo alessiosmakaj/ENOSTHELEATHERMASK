@@ -31,11 +31,16 @@ body {
 
 // Il body porta sempre un leggero gradiente verso il viola profondo:
 // dà profondità senza appesantire il nero piatto.
-body {
+// Livello fisso composito invece di background-attachment: fixed (che ridisegna lo sfondo a ogni scroll, soprattutto su mobile).
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image:
     radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(110, 20, 32, 0.12), transparent 60%),
     linear-gradient(180deg, $color-void 0%, $color-violet-deep 140%);
-  background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, h6 {

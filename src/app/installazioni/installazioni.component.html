@@ -32,7 +32,7 @@
     <article class="inst" *ngFor="let item of installazioni">
       <div class="inst__viewport is-start" [appSwipeHint]="item.images.length > 1">
         <div class="inst__strip" (scroll)="onStripScroll($event)">
-          <img *ngFor="let src of item.images" [src]="src" [alt]="item.title" class="inst__slide" loading="lazy">
+          <img *ngFor="let src of item.images" [src]="src" [alt]="item.title" class="inst__slide" loading="lazy" decoding="async">
         </div>
         <ng-container *ngIf="item.images.length > 1">
           <button class="inst__arrow inst__arrow--prev" (click)="scrollStrip($event, -1)" aria-label="Immagine precedente">
