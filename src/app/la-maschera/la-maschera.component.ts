@@ -6,14 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./la-maschera.component.scss']
 })
 export class LaMascheraComponent {
-  readonly mohawkImages = [
-    'assets/masks/MOHAWK.jpg',
-    'assets/masks/MOHAWK-2.jpg',
-    'assets/masks/MOHAWK-3.jpg',
-    'assets/masks/MOHAWK-4.jpg',
-    'assets/masks/MOHAWK-5.jpg',
-    'assets/masks/MOHAWK-6.jpg',
-    'assets/masks/MOHAWK-7.jpg'
+  readonly masks = [
+    { title: 'MohawkEnos', images: ['MOHAWK', 'MOHAWK-2', 'MOHAWK-3', 'MOHAWK-4', 'MOHAWK-5', 'MOHAWK-6', 'MOHAWK-7'].map(f => `assets/masks/${f}.jpg`) },
+    { title: 'SpikEnos', images: Array.from({ length: 12 }, (_, i) => `assets/masks/spikenos-${i + 1}.jpg`) }
   ];
 
   onCarouselScroll(event: Event): void {

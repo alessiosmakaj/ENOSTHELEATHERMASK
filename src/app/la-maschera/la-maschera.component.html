@@ -33,14 +33,14 @@
   </div>
 </section>
 
-<section class="section mask-carousel">
+<section class="section mask-carousel" *ngFor="let m of masks">
   <div class="container">
-    <h2 class="mask-carousel__title">MohawkEnos</h2>
+    <h2 class="mask-carousel__title">{{ m.title }}</h2>
     <div class="mask-carousel__viewport is-start">
       <div class="mask-carousel__strip" (scroll)="onCarouselScroll($event)">
-        <img *ngFor="let src of mohawkImages" [src]="src" alt="MohawkEnos" class="mask-carousel__slide" loading="lazy">
+        <img *ngFor="let src of m.images" [src]="src" [alt]="m.title" class="mask-carousel__slide" loading="lazy">
       </div>
-      <ng-container *ngIf="mohawkImages.length > 1">
+      <ng-container *ngIf="m.images.length > 1">
         <button class="mask-carousel__arrow mask-carousel__arrow--prev" (click)="scrollCarousel($event, -1)" aria-label="Immagine precedente">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
