@@ -1,8 +1,105 @@
+@import 'variables';
+@import 'mixins';
 
 .inst-intro {
   padding-top: 0;
 
   &__inner {
     max-width: 720px;
+  }
+}
+
+.inst-list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.inst {
+  &__viewport {
+    position: relative;
+  }
+
+  &__strip {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  &__slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    height: 70vh;
+    max-height: 720px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid $color-iron-soft;
+    background: rgba($color-void, 0.55);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    color: $color-ivory;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity $dur-fast ease, background $dur-fast ease;
+
+    svg { width: 20px; height: 20px; }
+
+    &:hover {
+      opacity: 1;
+      background: rgba($color-blood, 0.55);
+    }
+
+    &--prev { left: $space-3; }
+    &--next { right: $space-3; }
+  }
+
+  &__viewport.is-start &__arrow--prev,
+  &__viewport.is-end &__arrow--next {
+    display: none;
+  }
+
+  &__title {
+    margin-top: $space-3;
+    margin-bottom: $space-1;
+    text-align: center;
+  }
+
+  &__meta {
+    text-align: center;
+    font-family: $font-accent;
+    letter-spacing: $ls-mid;
+    text-transform: uppercase;
+    font-size: 0.92rem;
+    color: $color-ivory-faint;
+    max-width: 46ch;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .inst {
+    &__slide {
+      height: 56vh;
+    }
+
+    &__arrow {
+      display: none;
+    }
   }
 }
