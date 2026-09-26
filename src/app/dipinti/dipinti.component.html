@@ -26,7 +26,7 @@
 <section class="section">
   <div class="container painting-list">
     <article class="painting" *ngFor="let p of paintings">
-      <div class="painting__viewport is-start">
+      <div class="painting__viewport is-start" [appSwipeHint]="p.images.length > 1">
         <div class="painting__strip" (scroll)="onStripScroll($event)">
           <img *ngFor="let src of p.images" [src]="src" [alt]="p.title" class="painting__slide" loading="lazy">
         </div>

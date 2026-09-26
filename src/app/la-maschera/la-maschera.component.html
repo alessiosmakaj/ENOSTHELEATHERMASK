@@ -36,7 +36,7 @@
 <section class="section mask-carousel" *ngFor="let m of masks">
   <div class="container">
     <h2 class="mask-carousel__title">{{ m.title }}</h2>
-    <div class="mask-carousel__viewport is-start">
+    <div class="mask-carousel__viewport is-start" [appSwipeHint]="m.images.length > 1">
       <div class="mask-carousel__strip" (scroll)="onCarouselScroll($event)">
         <img *ngFor="let src of m.images" [src]="src" [alt]="m.title" class="mask-carousel__slide" loading="lazy">
       </div>

@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DipintiComponent } from './dipinti/dipinti.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { LaMascheraComponent } from './la-maschera/la-maschera.component';
+import { SwipeHintDirective } from './swipe-hint.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LaMascheraComponent } from './la-maschera/la-maschera.component';
     FooterComponent,
     DipintiComponent,
     PerformanceComponent,
-    LaMascheraComponent
+    LaMascheraComponent,
+    SwipeHintDirective
   ],
   imports: [
     BrowserModule,

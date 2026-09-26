@@ -30,7 +30,7 @@
 <section class="section">
   <div class="container inst-list">
     <article class="inst" *ngFor="let item of installazioni">
-      <div class="inst__viewport is-start">
+      <div class="inst__viewport is-start" [appSwipeHint]="item.images.length > 1">
         <div class="inst__strip" (scroll)="onStripScroll($event)">
           <img *ngFor="let src of item.images" [src]="src" [alt]="item.title" class="inst__slide" loading="lazy">
         </div>

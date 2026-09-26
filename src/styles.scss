@@ -309,3 +309,42 @@ html {
     text-shadow: none;
   }
 }
+
+// Suggerimento di swipe (solo mobile, gestito da SwipeHintDirective).
+.swipe-hint {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: $color-blood-bright;
+  background: rgba($color-void, 0.6);
+  border: 1px solid rgba($color-blood-bright, 0.65);
+  box-shadow: 0 0 18px rgba($color-blood-bright, 0.55);
+  pointer-events: none;
+  opacity: 0;
+  animation: swipe-hint-pulse 1.4s ease-in-out 2;
+
+  svg { width: 20px; height: 20px; }
+}
+
+.swipe-nudge img {
+  animation: swipe-nudge 1.4s ease-in-out 2;
+}
+
+@keyframes swipe-nudge {
+  0%, 100% { transform: translateX(0); }
+  35%, 60% { transform: translateX(-56px); }
+}
+
+@keyframes swipe-hint-pulse {
+  0% { opacity: 0; transform: translateX(8px); }
+  25% { opacity: 1; }
+  50% { opacity: 1; transform: translateX(-12px); }
+  100% { opacity: 0; transform: translateX(-16px); }
+}
