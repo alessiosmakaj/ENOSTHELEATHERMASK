@@ -8,6 +8,9 @@ interface Painting {
 
 const BASE = 'assets/dipinti/';
 
+const withDetails = (slug: string, n: number): string[] =>
+  [`${slug}.jpg`, ...Array.from({ length: n }, (_, i) => `${slug}-dettaglio-${i + 1}.jpg`)].map(f => BASE + f);
+
 @Component({
   selector: 'app-dipinti',
   templateUrl: './dipinti.component.html',
@@ -72,6 +75,15 @@ export class DipintiComponent {
     { title: 'Fognenos', meta: 'Acrilico e sex toys su tela · 160×260 cm · 2025', images: [
       'fognenos.jpg', 'fognenos-dettaglio-1.jpg', 'fognenos-dettaglio-2.jpg'
     ].map(f => BASE + f) },
+    { title: 'Barenos', meta: 'Sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('barenos', 3) },
+    { title: 'Betonierenos', meta: 'Sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('betonierenos', 3) },
+    { title: 'Carcassenos', meta: 'Sex toys e acrilico su tela · 140×190 cm · 2025', images: withDetails('carcassenos', 3) },
+    { title: 'Decadenzenos pt.1', meta: 'Sex toys e acrilico su tela · 160×160 cm · 2025', images: withDetails('decadenzenos-pt1', 3) },
+    { title: 'Decadenzenos pt.2', meta: 'Sex toys e acrilico su tela · 160×160 cm · 2025', images: withDetails('decadenzenos-pt2', 2) },
+    { title: 'Eutanasienos', meta: 'Sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('eutanasienos', 3) },
+    { title: 'Ghigliottinones', meta: 'Latex, sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('ghigliottinones', 3) },
+    { title: 'Paludenos', meta: 'Sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('paludenos', 3) },
+    { title: 'Passivenos, “Non provo più”', meta: 'Acrilico, olio, stampa 3D, sex toys, ecopelle e denim su tela · 180×95 cm · 2025', images: withDetails('passivenos', 3) },
   ];
 
   // Nasconde la freccia dove non ci sono altre immagini in quella direzione.
