@@ -222,25 +222,27 @@ html {
   text-transform: uppercase;
   color: $color-ivory;
   text-decoration: none;
-  background: transparent;
-  border: 1px solid rgba($color-ivory, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: $radius-sm;
   cursor: pointer;
-  transition: border-color $dur-fast ease, background $dur-fast ease, color $dur-fast ease;
+  transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.12s ease;
 
   &:hover {
     border-color: $color-blood-bright;
-    background: rgba($color-blood-bright, 0.12);
+    background: rgba($color-blood-bright, 0.32);
+    box-shadow: 0 0 18px rgba($color-blood-bright, 0.55), 0 0 42px rgba($color-blood-bright, 0.25);
+  }
+
+  &:active {
+    transform: scale(0.96);
   }
 
   &--solid {
-    background: $color-blood;
-    border-color: $color-blood;
-
-    &:hover {
-      background: $color-blood-bright;
-      border-color: $color-blood-bright;
-    }
+    background: rgba($color-blood-bright, 0.28);
+    border-color: rgba($color-blood-bright, 0.7);
   }
 }
 
