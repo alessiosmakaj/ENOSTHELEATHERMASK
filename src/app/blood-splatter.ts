@@ -1,7 +1,11 @@
 const DURATION = 3000;
 const COLORS = ['#9c2333', '#8a1c2b', '#6e1420', '#b02a3c', '#5a0f19'];
 
+// Lattice/petrolio: nero lucido, più denso e lento del sangue.
+const OIL_COLORS = ['#020203', '#060608', '#0c0c10', '#000000'];
+
 interface Drop {
+  oil: boolean;
   born: number;
   x: number;
   y: number;
@@ -20,7 +24,7 @@ let running = false;
 let last = 0;
 
 const rand = (min: number, max: number) => min + Math.random() * (max - min);
-const pick = () => COLORS[Math.floor(Math.random() * COLORS.length)];
+const pick = (palette: string[]) => palette[Math.floor(Math.random() * palette.length)];
 
 function ensureCanvas(): void {
   if (!canvas) {
@@ -39,24 +43,26 @@ function ensureCanvas(): void {
   }
 }
 
-export function splatBlood(x: number, y: number): void {
+export function splatBlood(x: number, y: number, oil = false): void {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
   ensureCanvas();
   const born = performance.now();
+  const palette = oil ? OIL_COLORS : COLORS;
 
   // Macchia centrale: resta ferma e sfuma con il resto.
-  for (let i = 0; i < 12; i++) {
+  const blobs = oil ? 18 : 12;
+  for (let i = 0; i < blobs; i++) {
     const a = rand(0, Math.PI * 2);
-    const d = rand(0, 22);
-    drops.push({ born, x: x + Math.cos(a) * d, y: y + Math.sin(a) * d, vx: 0, vy: 0, r: rand(3, 9), color: pick(), trail: [], still: true });
+    const d = rand(0, oil ? 30 : 22);
+    drops.push({ oil, born, x: x + Math.cos(a) * d, y: y + Math.sin(a) * d, vx: 0, vy: 0, r: oil ? rand(4, 12) : rand(3, 9), color: pick(palette), trail: [], still: true });
   }
   // Gocce proiettate verso l'esterno: le piccole sono veloci, le grandi pesanti.
   const count = Math.round(rand(45, 70));
   for (let i = 0; i < count; i++) {
     const a = rand(0, Math.PI * 2);
-    const r = rand(1.2, 6) * (Math.random() < 0.12 ? 1.6 : 1);
-    const speed = rand(3, 16) * (1 - r / 14);
-    drops.push({ born, x, y, vx: Math.cos(a) * speed, vy: Math.sin(a) * speed - rand(0, 3), r, color: pick(), trail: [], still: false });
+    const r = rand(1.6, oil ? 9.5 : 6) * (Math.random() < 0.12 ? 1.6 : 1);
+    const speed = rand(3, 16) * (1 - r / 14) * (oil ? 0.75 : 1);
+    drops.push({ oil, born, x, y, vx: Math.cos(a) * speed, vy: Math.sin(a) * speed - rand(0, 3), r, color: pick(palette), trail: [], still: false });
   }
 
   if (!running) {
@@ -82,17 +88,32 @@ function frame(now: number): void {
     if (!d.still) {
       d.trail.push({ x: d.x, y: d.y });
       if (d.trail.length > 8) { d.trail.shift(); }
-      const drag = Math.pow(0.975, f);
+      const drag = Math.pow(d.oil ? 0.965 : 0.975, f);
       d.vx *= drag;
-      d.vy = d.vy * drag + 0.32 * f;
+      d.vy = d.vy * drag + (d.oil ? 0.28 : 0.32) * f;
       d.x += d.vx * f;
       d.y += d.vy * f;
     }
 
     c.globalAlpha = 1 - t;
+    c.lineCap = 'round';
+    // Il nero su fondo scuro sparisce: un bordo chiaro sottile e un riflesso lo rendono lucido.
+    if (d.oil) {
+      c.strokeStyle = 'rgba(150, 165, 190, 0.26)';
+      for (let k = 1; k < d.trail.length; k++) {
+        c.lineWidth = d.r * 1.7 * (k / d.trail.length) + 1.6;
+        c.beginPath();
+        c.moveTo(d.trail[k - 1].x, d.trail[k - 1].y);
+        c.lineTo(d.trail[k].x, d.trail[k].y);
+        c.stroke();
+      }
+      c.beginPath();
+      c.arc(d.x, d.y, d.r + 0.8, 0, Math.PI * 2);
+      c.fillStyle = 'rgba(150, 165, 190, 0.28)';
+      c.fill();
+    }
     c.fillStyle = d.color;
     c.strokeStyle = d.color;
-    c.lineCap = 'round';
     for (let k = 1; k < d.trail.length; k++) {
       c.lineWidth = d.r * 1.7 * (k / d.trail.length);
       c.beginPath();
@@ -103,6 +124,12 @@ function frame(now: number): void {
     c.beginPath();
     c.arc(d.x, d.y, d.r, 0, Math.PI * 2);
     c.fill();
+    if (d.oil && d.r > 2.5) {
+      c.beginPath();
+      c.arc(d.x - d.r * 0.35, d.y - d.r * 0.35, d.r * 0.28, 0, Math.PI * 2);
+      c.fillStyle = 'rgba(210, 225, 255, 0.55)';
+      c.fill();
+    }
   }
   c.globalAlpha = 1;
 
