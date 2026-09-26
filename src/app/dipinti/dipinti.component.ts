@@ -83,7 +83,7 @@ export class DipintiComponent {
     { title: 'Eutanasienos', meta: 'Sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('eutanasienos', 3) },
     { title: 'Ghigliottinones', meta: 'Latex, sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('ghigliottinones', 3) },
     { title: 'Paludenos', meta: 'Sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('paludenos', 3) },
-    { title: 'Passivenos, “Non provo più”', meta: 'Acrilico, olio, stampa 3D, sex toys, ecopelle e denim su tela · 180×95 cm · 2025', images: withDetails('passivenos', 3) },
+    { title: 'Passivenos', meta: 'Acrilico, olio, stampa 3D, sex toys, ecopelle e denim su tela · 180×95 cm · 2025', images: withDetails('passivenos', 3) },
   ];
 
   // Nasconde la freccia dove non ci sono altre immagini in quella direzione.
