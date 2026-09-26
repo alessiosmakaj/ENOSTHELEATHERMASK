@@ -12,7 +12,8 @@ export class LaMascheraComponent {
     { title: 'DistopichEnos', images: Array.from({ length: 7 }, (_, i) => `assets/masks/distopichenos-${i + 1}.jpg`) },
     { title: 'Dr.Enos', images: Array.from({ length: 11 }, (_, i) => `assets/masks/drenos-${i + 1}.jpg`) },
     { title: 'SicariEnos', images: Array.from({ length: 9 }, (_, i) => `assets/masks/sicarienos-${i + 1}.jpg`) },
-    { title: 'VisionariEnos', images: Array.from({ length: 10 }, (_, i) => `assets/masks/visionarienos-${i + 1}.jpg`) }
+    { title: 'VisionariEnos', images: Array.from({ length: 10 }, (_, i) => `assets/masks/visionarienos-${i + 1}.jpg`) },
+    { title: 'TribalEnos', images: Array.from({ length: 4 }, (_, i) => `assets/masks/tribalenos-${i + 1}.jpg`) }
   ];
 
   onCarouselScroll(event: Event): void {
