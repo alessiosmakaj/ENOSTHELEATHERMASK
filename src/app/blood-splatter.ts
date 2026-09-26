@@ -1,4 +1,5 @@
-const OIL_LIFE = 3000;
+// Petrolio: più lento e persistente del sangue, colata densa che si allunga a fatica.
+const OIL_LIFE = 7000;
 // Sangue: resta pieno mentre cola, poi sfuma per gli ultimi 3 secondi.
 const BLOOD_LIFE = 5500;
 const BLOOD_FADE = 3000;
@@ -22,6 +23,7 @@ interface Drop {
 }
 
 interface Drip {
+  oil: boolean;
   born: number;
   delay: number;
   x: number;
@@ -53,7 +55,7 @@ let last = 0;
 
 const rand = (min: number, max: number) => min + Math.random() * (max - min);
 const pick = (palette: string[]) => palette[Math.floor(Math.random() * palette.length)];
-const bloodAlpha = (age: number) => Math.min(1, Math.max(0, (BLOOD_LIFE - age) / BLOOD_FADE));
+const fadeAlpha = (age: number, oil: boolean) => Math.min(1, Math.max(0, ((oil ? OIL_LIFE : BLOOD_LIFE) - age) / BLOOD_FADE));
 
 function ensureCanvas(): void {
   if (!canvas) {
@@ -73,15 +75,16 @@ function ensureCanvas(): void {
   }
 }
 
-function addDrip(born: number, x: number, y: number, r: number, color: string, big: boolean): void {
+function addDrip(born: number, x: number, y: number, r: number, color: string, big: boolean, oil: boolean): void {
   drips.push({
     born,
-    delay: rand(250, big ? 900 : 1600),
+    oil,
+    delay: oil ? rand(500, big ? 1200 : 2000) : rand(250, big ? 900 : 1600),
     x,
     y: y + r * 0.4,
-    w: Math.max(1.6, r * rand(0.45, 0.7)),
-    max: big ? rand(70, 170) : rand(25, 90),
-    k: rand(0.00045, 0.0009),
+    w: Math.max(oil ? 2.4 : 1.6, r * (oil ? rand(0.55, 0.8) : rand(0.45, 0.7))),
+    max: oil ? (big ? rand(110, 240) : rand(40, 130)) : (big ? rand(70, 170) : rand(25, 90)),
+    k: oil ? rand(0.00018, 0.00038) : rand(0.00045, 0.0009),
     seed: rand(0, 100),
     color
   });
@@ -97,10 +100,10 @@ export function splatBlood(x: number, y: number, oil = false): void {
   for (let i = 0; i < blobs; i++) {
     const a = rand(0, Math.PI * 2);
     const d = rand(0, oil ? 30 : 20);
-    const r = oil ? rand(4, 12) : rand(3, 10);
+    const r = oil ? rand(3, 8) : rand(3, 10);
     const color = pick(palette);
     drops.push({ oil, born, x: x + Math.cos(a) * d, y: y + Math.sin(a) * d, vx: 0, vy: 0, r, color, trail: [], still: true, flight: 0 });
-    if (!oil && i < 4) { addDrip(born, x + Math.cos(a) * d, y + Math.sin(a) * d, r, color, true); }
+    if (i < (oil ? 3 : 4)) { addDrip(born, x + Math.cos(a) * d, y + Math.sin(a) * d, r, color, true, oil); }
   }
 
   if (!oil) {
@@ -114,7 +117,7 @@ export function splatBlood(x: number, y: number, oil = false): void {
   const count = Math.round(rand(45, 70));
   for (let i = 0; i < count; i++) {
     const a = rand(0, Math.PI * 2);
-    const r = rand(1.6, oil ? 9.5 : 6) * (Math.random() < 0.12 ? 1.6 : 1);
+    const r = rand(1.4, oil ? 6.5 : 6) * (Math.random() < 0.12 ? 1.6 : 1);
     const speed = rand(3, 16) * (1 - r / 14) * (oil ? 0.75 : 1);
     drops.push({ oil, born, x, y, vx: Math.cos(a) * speed, vy: Math.sin(a) * speed - rand(0, 3), r, color: pick(palette), trail: [], still: false, flight: rand(10, 38) });
   }
@@ -126,6 +129,42 @@ export function splatBlood(x: number, y: number, oil = false): void {
   }
 }
 
+// Petrolio: filo denso che si assottiglia man mano che si stira, goccia allungata in punta,
+// bordo chiaro sottile e riflesso freddo lungo un lato (senza il "pallino" tondo del sangue).
+function drawOilDrip(c: CanvasRenderingContext2D, d: Drip, len: number, steps: number): void {
+  const pts: { x: number; y: number; w: number }[] = [];
+  for (let i = 0; i <= steps; i++) {
+    const u = i / steps;
+    const y = d.y + len * u;
+    // Larghezza irregolare, molto più stretta verso il basso: il fluido denso si stira.
+    const w = d.w * (1 - 0.6 * u) * (1 + 0.08 * Math.sin(y * 0.12 + d.seed));
+    pts.push({ x: d.x + Math.sin(y * 0.02 + d.seed) * 0.5, y, w: Math.max(1.2, w) });
+  }
+  const tip = pts[pts.length - 1];
+  const stroke = (color: string, extra: number) => {
+    c.strokeStyle = color;
+    for (let i = 1; i < pts.length; i++) {
+      c.lineWidth = pts[i].w + extra;
+      c.beginPath();
+      c.moveTo(pts[i - 1].x, pts[i - 1].y);
+      c.lineTo(pts[i].x, pts[i].y);
+      c.stroke();
+    }
+    c.fillStyle = color;
+    c.beginPath();
+    c.ellipse(tip.x, tip.y + tip.w * 0.6, tip.w * 0.55 + extra / 2, tip.w * 1.15 + extra / 2, 0, 0, Math.PI * 2);
+    c.fill();
+  };
+  stroke('rgba(150, 165, 190, 0.26)', 1.6);
+  stroke(d.color, 0);
+  c.strokeStyle = 'rgba(210, 225, 255, 0.32)';
+  c.lineWidth = Math.max(0.7, d.w * 0.16);
+  c.beginPath();
+  c.moveTo(d.x - d.w * 0.22, d.y + d.w * 0.4);
+  c.lineTo(tip.x - tip.w * 0.2, tip.y);
+  c.stroke();
+}
+
 function drawDrip(c: CanvasRenderingContext2D, d: Drip, age: number): void {
   const t = age - d.delay;
   if (t <= 0) { return; }
@@ -133,6 +172,12 @@ function drawDrip(c: CanvasRenderingContext2D, d: Drip, age: number): void {
   const len = d.max * (1 - Math.exp(-d.k * t));
   const steps = Math.max(1, Math.ceil(len / 5));
   c.lineCap = 'round';
+
+  if (d.oil) {
+    drawOilDrip(c, d, len, steps);
+    return;
+  }
+
   c.strokeStyle = d.color;
   let px = d.x;
   let py = d.y;
@@ -173,7 +218,7 @@ function frame(now: number): void {
     const ry = rays[i];
     const age = now - ry.born;
     if (age >= BLOOD_LIFE) { rays.splice(i, 1); continue; }
-    c.globalAlpha = bloodAlpha(age);
+    c.globalAlpha = fadeAlpha(age, false);
     c.fillStyle = ry.color;
     const ex = ry.x + Math.cos(ry.a) * ry.len;
     const ey = ry.y + Math.sin(ry.a) * ry.len;
@@ -190,8 +235,8 @@ function frame(now: number): void {
   for (let i = drips.length - 1; i >= 0; i--) {
     const dr = drips[i];
     const age = now - dr.born;
-    if (age >= BLOOD_LIFE) { drips.splice(i, 1); continue; }
-    c.globalAlpha = bloodAlpha(age);
+    if (age >= (dr.oil ? OIL_LIFE : BLOOD_LIFE)) { drips.splice(i, 1); continue; }
+    c.globalAlpha = fadeAlpha(age, dr.oil);
     drawDrip(c, dr, age);
   }
 
@@ -209,23 +254,26 @@ function frame(now: number): void {
       d.vy = d.vy * drag + (d.oil ? 0.28 : 0.32) * f;
       d.x += d.vx * f;
       d.y += d.vy * f;
-      if (!d.oil) {
-        d.flight -= f;
-        if (d.flight <= 0) {
-          // Atterra e si appiattisce: da qui in poi è una macchia ferma, le più grosse colano.
-          d.still = true;
-          d.trail = [];
-          d.r *= 1.15;
-          if (d.r > 3.2 && Math.random() < 0.55) { addDrip(d.born, d.x, d.y, d.r, d.color, false); }
+      d.flight -= f;
+      if (d.flight <= 0) {
+        // Atterra e si appiattisce: da qui in poi è una macchia ferma, le più grosse colano.
+        d.still = true;
+        d.trail = [];
+        d.r *= d.oil ? 1.25 : 1.15;
+        if (d.r > (d.oil ? 3.8 : 3.2) && Math.random() < (d.oil ? 0.4 : 0.55)) {
+          addDrip(d.born, d.x, d.y, d.r, d.color, false, d.oil);
         }
       }
+    } else if (d.oil && age < 4000) {
+      // Il petrolio depositato si allarga lentamente, come un fluido viscoso.
+      d.r *= 1 + 0.00125 * f;
     }
 
-    c.globalAlpha = d.oil ? 1 - age / life : bloodAlpha(age);
+    c.globalAlpha = fadeAlpha(age, d.oil);
     c.lineCap = 'round';
     // Il nero su fondo scuro sparisce: un bordo chiaro sottile e un riflesso lo rendono lucido.
     if (d.oil) {
-      c.strokeStyle = 'rgba(150, 165, 190, 0.26)';
+      c.strokeStyle = 'rgba(150, 165, 190, 0.16)';
       for (let k = 1; k < d.trail.length; k++) {
         c.lineWidth = d.r * 1.7 * (k / d.trail.length) + 1.6;
         c.beginPath();
@@ -235,7 +283,7 @@ function frame(now: number): void {
       }
       c.beginPath();
       c.arc(d.x, d.y, d.r + 0.8, 0, Math.PI * 2);
-      c.fillStyle = 'rgba(150, 165, 190, 0.28)';
+      c.fillStyle = 'rgba(150, 165, 190, 0.18)';
       c.fill();
     }
     c.fillStyle = d.color;
@@ -250,10 +298,16 @@ function frame(now: number): void {
     c.beginPath();
     c.arc(d.x, d.y, d.r, 0, Math.PI * 2);
     c.fill();
-    if (d.r > 2.5) {
+    if (d.oil && d.r > 3.5) {
+      // Riflesso a striscia sottile, non un puntino tondo: meno "pallina", più liquido steso.
+      c.beginPath();
+      c.ellipse(d.x - d.r * 0.3, d.y - d.r * 0.38, d.r * 0.36, d.r * 0.12, -0.6, 0, Math.PI * 2);
+      c.fillStyle = 'rgba(210, 225, 255, 0.3)';
+      c.fill();
+    } else if (!d.oil && d.r > 2.5) {
       c.beginPath();
       c.arc(d.x - d.r * 0.35, d.y - d.r * 0.35, d.r * 0.28, 0, Math.PI * 2);
-      c.fillStyle = d.oil ? 'rgba(210, 225, 255, 0.55)' : 'rgba(255, 190, 190, 0.3)';
+      c.fillStyle = 'rgba(255, 190, 190, 0.3)';
       c.fill();
     }
   }
