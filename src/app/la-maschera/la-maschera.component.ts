@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class LaMascheraComponent {
   readonly masks = [
     { title: 'MohawkEnos', images: ['MOHAWK', 'MOHAWK-2', 'MOHAWK-3', 'MOHAWK-4', 'MOHAWK-5', 'MOHAWK-6', 'MOHAWK-7'].map(f => `assets/masks/${f}.jpg`) },
-    { title: 'SpikEnos', images: Array.from({ length: 12 }, (_, i) => `assets/masks/spikenos-${i + 1}.jpg`) }
+    { title: 'SpikEnos', images: Array.from({ length: 12 }, (_, i) => `assets/masks/spikenos-${i + 1}.jpg`) },
+    { title: 'DistopichEnos', images: Array.from({ length: 7 }, (_, i) => `assets/masks/distopichenos-${i + 1}.jpg`) }
   ];
 
   onCarouselScroll(event: Event): void {
