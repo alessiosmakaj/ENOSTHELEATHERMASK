@@ -16,6 +16,7 @@ const BASE = 'assets/installazioni/';
 export class InstallazioniComponent {
   // Dal più recente al più vecchio.
   readonly installazioni: Installazione[] = [
+    { title: 'Muta Umana', meta: 'Acrilico, latex, vetrificante, sex toys e neon su forex', images: [BASE + 'muta-umana.jpg'] },
     { title: 'Gogna Viva', meta: 'Latex, legno, stampa in 3D e vernice · 2025', images: [
       'gogna-viva-1.jpg', 'gogna-viva-2.jpg', 'gogna-viva-3.jpg', 'gogna-viva-4.jpg'
     ].map(f => BASE + f) },
