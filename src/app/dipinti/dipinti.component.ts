@@ -138,6 +138,26 @@ export class DipintiComponent {
     { title: 'Sanctuary Eco Retreat', meta: 'Opera realizzata per la performance al Sanctuary Eco Retreat · 2023', images: [
       'sanctuary.jpg', 'sanctuary-2.jpg', 'sanctuary-dettaglio-1.jpg'
     ].map(f => BASE + f) },
+    { title: 'Prigionierenos', meta: 'Acrilico e sex toys su ecopelle · 2022', images: [BASE + 'prigionierenos.jpg'] },
+    { title: 'Solitudinenos', meta: 'Acrilico e sex toys su ecopelle · 100×100 cm · 2022', images: withDetails('solitudinenos', 2) },
+    { title: 'Piratenos', meta: 'Acrilico e sex toys su ecopelle · 100×100 cm · 2022', images: [
+      'piratenos.jpg', 'piratenos-2.jpg', 'piratenos-3.jpg', 'piratenos-dettaglio-1.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Impiccatenos', meta: 'Acrilico e sex toys su ecopelle · 2022', images: [BASE + 'impiccatenos.jpg', BASE + 'impiccatenos-2.jpg'] },
+    { title: 'KurtCobENOS', meta: 'Sex toys e acrilico su ecopelle · 2022', images: [BASE + 'kurtcobenos.jpg', BASE + 'kurtcobenos-2.jpg'] },
+    { title: 'Camminenos', meta: 'Acrilico, sex toys e suola di Dr. Martens su ecopelle · 2022', images: [BASE + 'camminenos.jpg'] },
+    { title: 'Tormentatenos', meta: 'Acrilico e sex toys su ecopelle · 100×100 cm · 2022', images: [
+      'tormentatenos.jpg', 'tormentatenos-2.jpg', 'tormentatenos-3.jpg', 'tormentatenos-4.jpg', 'tormentatenos-dettaglio-1.jpg', 'tormentatenos-dettaglio-2.jpg', 'tormentatenos-dettaglio-3.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Tuffatorenos', meta: 'Acrilico e sex toys su ecopelle · 115×100 cm · 2023', images: [BASE + 'tuffatorenos.jpg'] },
+    { title: 'Califanenos', meta: 'Spray e sex toys su plexiglas · 100×100 cm · 2022', images: [BASE + 'califanenos.jpg'] },
+    { title: 'Orgenos', meta: 'Acrilico e sex toys su ecopelle · 100×100 cm · 2022', images: [BASE + 'orgenos.jpg', BASE + 'orgenos-2.jpg'] },
+    { title: 'Cavallinenos', meta: 'Acrilico e sex toys su ecopelle · 2022', images: [BASE + 'cavallinenos.jpg'] },
+    { title: 'Gognenos', meta: 'Acrilico e sex toys su ecopelle · 2022', images: [BASE + 'gognenos.jpg'] },
+    { title: 'Schiavenos', meta: 'Acrilico e sex toys su ecopelle · 2022', images: [BASE + 'schiavenos.jpg', BASE + 'schiavenos-2.jpg'] },
+    { title: 'Za Art Gallery', meta: 'Documentazione della performance a Za Art Gallery · 2022', images: withDetails('za-art-gallery', 3) },
+    { title: 'Circolo degli Illuminati', meta: 'Sex toys e acrilico su ecopelle, documentazione della performance al Circolo degli Illuminati · 2023', images: [BASE + 'circolo-illuminati.jpg', BASE + 'circolo-illuminati-dettaglio-1.jpg'] },
+    { title: 'Rock of Agenos', meta: 'Acrilico e sex toys su ecopelle · 115×100 cm · 2023', images: [BASE + 'rock-of-agenos.jpg'] },
   ];
 
   // Nasconde la freccia dove non ci sono altre immagini in quella direzione.
