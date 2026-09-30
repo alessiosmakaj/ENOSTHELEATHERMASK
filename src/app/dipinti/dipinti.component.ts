@@ -84,6 +84,25 @@ export class DipintiComponent {
     { title: 'Ghigliottinones', meta: 'Latex, sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('ghigliottinones', 3) },
     { title: 'Paludenos', meta: 'Sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('paludenos', 3) },
     { title: 'Passivenos', meta: 'Acrilico, olio, stampa 3D, sex toys, ecopelle e denim su tela · 180×95 cm · 2025', images: withDetails('passivenos', 3) },
+    { title: 'Mortenos', meta: 'Acrilico e sex toys su tela ed ecopelle · 135×100 cm · 2023', images: [
+      'mortenos.jpg', 'mortenos-2.jpg', 'mortenos-dettaglio-1.jpg', 'mortenos-dettaglio-2.jpg', 'mortenos-dettaglio-3.jpg', 'mortenos-dettaglio-4.jpg', 'mortenos-dettaglio-5.jpg', 'mortenos-retro-1.jpg', 'mortenos-retro-2.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Sentimentenos', meta: 'Sex toys e acrilico su ecopelle · 135×100 cm · 2023', images: [
+      'sentimentenos.jpg', 'sentimentenos-2.jpg', 'sentimentenos-dettaglio-1.jpg', 'sentimentenos-dettaglio-2.jpg', 'sentimentenos-dettaglio-3.jpg', 'sentimentenos-dettaglio-4.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Albenos', meta: 'Acrilico e sex toys su tela ed ecopelle · 2023', images: withDetails('albenos', 5) },
+    { title: 'Condannatenos', meta: 'Acrilico, sex toys e lamiera su ecopelle · 2023', images: [
+      'condannatenos.jpg', 'condannatenos-2.jpg', 'condannatenos-dettaglio-1.jpg', 'condannatenos-dettaglio-2.jpg', 'condannatenos-dettaglio-3.jpg', 'condannatenos-dettaglio-4.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Insonnienos', meta: 'Sex toys e acrilico su denim ed ecopelle · 135×100 cm · 2024', images: [
+      'insonnienos.jpg', 'insonnienos-2.jpg', 'insonnienos-dettaglio-1.jpg', 'insonnienos-dettaglio-2.jpg', 'insonnienos-dettaglio-3.jpg', 'insonnienos-dettaglio-4.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Visionarienos', meta: 'Sex toys e acrilico su denim ed ecopelle · 2024', images: [
+      'visionarienos.jpg', 'visionarienos-2.jpg', 'visionarienos-dettaglio-1.jpg', 'visionarienos-dettaglio-2.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Sanctuary Eco Retreat', meta: 'Opera realizzata per la performance al Sanctuary Eco Retreat · 2023', images: [
+      'sanctuary.jpg', 'sanctuary-2.jpg', 'sanctuary-dettaglio-1.jpg'
+    ].map(f => BASE + f) },
   ];
 
   // Nasconde la freccia dove non ci sono altre immagini in quella direzione.
