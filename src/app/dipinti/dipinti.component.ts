@@ -84,6 +84,18 @@ export class DipintiComponent {
     { title: 'Ghigliottinones', meta: 'Latex, sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('ghigliottinones', 3) },
     { title: 'Paludenos', meta: 'Sex toys e acrilico su tela · 160×120 cm · 2025', images: withDetails('paludenos', 3) },
     { title: 'Passivenos', meta: 'Acrilico, olio, stampa 3D, sex toys, ecopelle e denim su tela · 180×95 cm · 2025', images: withDetails('passivenos', 3) },
+    { title: 'Labirintenos', meta: 'Acrilico, lamiera, sex toys e stampa 3D su tela · 130×160 cm · 2025', images: [
+      'labirintenos.jpg', 'labirintenos-2.jpg', 'labirintenos-3.jpg', 'labirintenos-dettaglio-1.jpg', 'labirintenos-dettaglio-2.jpg', 'labirintenos-dettaglio-3.jpg', 'labirintenos-dettaglio-4.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Boienos', meta: 'Acrilico, lamiera, sex toys e stampa 3D su tela · 160×90 cm · 2025', images: [
+      'boienos.jpg', 'boienos-2.jpg', 'boienos-dettaglio-1.jpg', 'boienos-dettaglio-2.jpg', 'boienos-dettaglio-3.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Oltretombenos', meta: 'Acrilico, sex toys e lamiera su tela · 2025', images: [
+      'oltretombenos.jpg', 'oltretombenos-2.jpg', 'oltretombenos-dettaglio-1.jpg', 'oltretombenos-dettaglio-2.jpg', 'oltretombenos-dettaglio-3.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Isolamentenos', meta: 'Acrilico, lamiera, sex toys e stampa 3D su tela · 135×100 cm · 2025', images: [
+      'isolamentenos.jpg', 'isolamentenos-2.jpg', 'isolamentenos-dettaglio-1.jpg', 'isolamentenos-dettaglio-2.jpg', 'isolamentenos-dettaglio-3.jpg'
+    ].map(f => BASE + f) },
     { title: 'Mortenos', meta: 'Acrilico e sex toys su tela ed ecopelle · 135×100 cm · 2023', images: [
       'mortenos.jpg', 'mortenos-2.jpg', 'mortenos-dettaglio-1.jpg', 'mortenos-dettaglio-2.jpg', 'mortenos-dettaglio-3.jpg', 'mortenos-dettaglio-4.jpg', 'mortenos-dettaglio-5.jpg', 'mortenos-retro-1.jpg', 'mortenos-retro-2.jpg'
     ].map(f => BASE + f) },
