@@ -108,7 +108,6 @@ export class DipintiComponent {
     ].map(f => BASE + f) },
     { title: 'Mummienos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'mummienos.jpg'], video: BASE + 'mummienos-ia.mp4' },
     { title: 'Umorenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'umorenos.jpg'], video: BASE + 'umorenos-ia.mp4' },
-    { title: 'Reazionenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'reazionenos.jpg'] },
     { title: 'Dipendentenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'dipendentenos.jpg'], video: BASE + 'dipendentenos-ia.mp4' },
     { title: 'Sabbienos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'sabbienos.jpg'], video: BASE + 'sabbienos-ia.mp4' },
     { title: 'Distopichenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'distopichenos-2024.jpg'], video: BASE + 'distopichenos-2024-ia.mp4' },
@@ -119,9 +118,7 @@ export class DipintiComponent {
     { title: 'Suicidenos', meta: 'Acrilico, pena, sex toys e latex su tela · 110×100 cm · 2024', images: [BASE + 'suicidenos.jpg'], video: BASE + 'suicidenos-ia.mp4' },
     { title: 'Lobotomizazionenos', meta: 'Acrilico, sex toys e latex su tela ed ecopelle · 110×100 cm · 2024', images: [BASE + 'lobotomizazionenos.jpg'], video: BASE + 'lobotomizazionenos-ia.mp4' },
     { title: 'Armaturenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'armaturenos.jpg'], video: BASE + 'armaturenos-ia.mp4' },
-    { title: 'Embrionenos', meta: '2024', images: [BASE + 'embrionenos.jpg'], video: BASE + 'embrionenos-ia.mp4' },
-    { title: 'Lapidenos', meta: '2024', images: [BASE + 'lapidenos.jpg'], video: BASE + 'lapidenos-ia.mp4' },
-    { title: 'Relazionenos', meta: '2024', images: [], video: BASE + 'relazionenos-ia.mp4' },
+    { title: 'Relazionenos', meta: '2024', images: [BASE + 'reazionenos.jpg'], video: BASE + 'relazionenos-ia.mp4' },
     { title: 'Insonnienos', meta: 'Sex toys e acrilico su denim ed ecopelle · 135×100 cm · 2024', images: [
       'insonnienos.jpg', 'insonnienos-2.jpg', 'insonnienos-dettaglio-1.jpg', 'insonnienos-dettaglio-2.jpg', 'insonnienos-dettaglio-3.jpg', 'insonnienos-dettaglio-4.jpg'
     ].map(f => BASE + f) },

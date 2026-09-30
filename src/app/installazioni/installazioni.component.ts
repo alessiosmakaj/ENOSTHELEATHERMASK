@@ -4,6 +4,7 @@ interface Installazione {
   title: string;
   meta: string;
   images: string[];
+  video?: string;
 }
 
 const BASE = 'assets/installazioni/';
@@ -23,7 +24,8 @@ export class InstallazioniComponent {
     { title: 'Carcassa02', meta: 'Acrilico, pelle lucida su pelle · 2026', images: [BASE + 'carcassa-02.jpg'] },
     { title: 'Carcassa01', meta: 'Acrilico, pelle lucida su pelle · 2026', images: [BASE + 'carcassa-01.jpg'] },
     { title: 'Adolescenzenos', meta: 'Spray, sex toys, acrilico, poliuretano, tubi, maschera di pelle e Vans · 2024', images: [BASE + 'adolescenzenos.jpg'] },
-    { title: 'Lapidenos', meta: 'Sex toys, acrilico, spray, poliuretano, maschera di pelle e croce in legno · 2024', images: [BASE + 'lapidenos.jpg'] },
+    { title: 'Embrionenos', meta: '2024', images: [BASE + 'embrionenos.jpg'], video: BASE + 'embrionenos-ia.mp4' },
+    { title: 'Lapidenos', meta: 'Sex toys, acrilico, spray, poliuretano, maschera di pelle e croce in legno · 2024', images: [BASE + 'lapidenos.jpg'], video: BASE + 'lapidenos-ia.mp4' },
     { title: 'Martirenos', meta: 'Acrilico, spray, poliuretano e Dr. Martens · 2024', images: [BASE + 'martirenos.jpg'] },
     { title: 'Mazzaferratenos', meta: 'Acrilico, sex toys, spray, catene e maschera · 2024', images: [BASE + 'mazzaferratenos.jpg'] },
     { title: 'Kromosenos', meta: 'Acrilico, sex toys, lamiera e neon su forex · 2023', images: [BASE + 'kromosenos.jpg'] },
@@ -32,6 +34,10 @@ export class InstallazioniComponent {
     ].map(f => BASE + f) },
     { title: 'Senza titolo', meta: 'Spray marker e sex toys su cartello stradale · 2022', images: [BASE + 'cartello-2022.jpg'] },
   ];
+
+  slideCount(item: Installazione): number {
+    return item.images.length + (item.video ? 1 : 0);
+  }
 
   onStripScroll(event: Event): void {
     const strip = event.target as HTMLElement;
