@@ -16,6 +16,7 @@ import { DipintiComponent } from './dipinti/dipinti.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { LaMascheraComponent } from './la-maschera/la-maschera.component';
 import { SwipeHintDirective } from './swipe-hint.directive';
+import { PlayOnVisibleDirective } from './play-on-visible.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SwipeHintDirective } from './swipe-hint.directive';
     DipintiComponent,
     PerformanceComponent,
     LaMascheraComponent,
-    SwipeHintDirective
+    SwipeHintDirective,
+    PlayOnVisibleDirective
   ],
   imports: [
     BrowserModule,

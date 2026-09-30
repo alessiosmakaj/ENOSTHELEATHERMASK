@@ -4,6 +4,7 @@ interface Painting {
   title: string;
   meta: string;
   images: string[]; // main image first, then dettagli
+  video?: string; // slide finale, muto e in loop
 }
 
 const BASE = 'assets/dipinti/';
@@ -105,6 +106,28 @@ export class DipintiComponent {
     { title: 'Sopravvisutenos', meta: 'Tecnica mista su tela · 145×85 cm · 2025', images: [
       'sopravvisutenos.jpg', 'sopravvisutenos-2.jpg', 'sopravvisutenos-dettaglio-1.jpg', 'sopravvisutenos-dettaglio-2.jpg', 'sopravvisutenos-dettaglio-3.jpg', 'sopravvisutenos-dettaglio-4.jpg'
     ].map(f => BASE + f) },
+    { title: 'Mummienos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'mummienos.jpg'], video: BASE + 'mummienos-ia.mp4' },
+    { title: 'Umorenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'umorenos.jpg'], video: BASE + 'umorenos-ia.mp4' },
+    { title: 'Reazionenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'reazionenos.jpg'] },
+    { title: 'Dipendentenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'dipendentenos.jpg'], video: BASE + 'dipendentenos-ia.mp4' },
+    { title: 'Sabbienos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'sabbienos.jpg'], video: BASE + 'sabbienos-ia.mp4' },
+    { title: 'Distopichenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'distopichenos-2024.jpg'], video: BASE + 'distopichenos-2024-ia.mp4' },
+    { title: 'Narcisistenos', meta: 'Acrilico, sex toys e latex su ecopelle e tela · 110×100 cm · 2024', images: [BASE + 'narcisistenos.jpg'], video: BASE + 'narcisistenos-ia.mp4' },
+    { title: 'Giunglenos', meta: 'Matita, sex toys e latex su tela · 110×100 cm · 2024', images: [BASE + 'giunglenos.jpg'], video: BASE + 'giunglenos-ia.mp4' },
+    { title: 'Cordonenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'cordonenos.jpg'], video: BASE + 'cordonenos-ia.mp4' },
+    { title: 'Placentenos', meta: 'Acrilico, sex toys e latex su tela · 110×100 cm · 2024', images: [BASE + 'placentenos.jpg'], video: BASE + 'placentenos-ia.mp4' },
+    { title: 'Suicidenos', meta: 'Acrilico, pena, sex toys e latex su tela · 110×100 cm · 2024', images: [BASE + 'suicidenos.jpg'], video: BASE + 'suicidenos-ia.mp4' },
+    { title: 'Lobotomizazionenos', meta: 'Acrilico, sex toys e latex su tela ed ecopelle · 110×100 cm · 2024', images: [BASE + 'lobotomizazionenos.jpg'], video: BASE + 'lobotomizazionenos-ia.mp4' },
+    { title: 'Armaturenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'armaturenos.jpg'], video: BASE + 'armaturenos-ia.mp4' },
+    { title: 'Embrionenos', meta: '2024', images: [BASE + 'embrionenos.jpg'], video: BASE + 'embrionenos-ia.mp4' },
+    { title: 'Lapidenos', meta: '2024', images: [BASE + 'lapidenos.jpg'], video: BASE + 'lapidenos-ia.mp4' },
+    { title: 'Relazionenos', meta: '2024', images: [], video: BASE + 'relazionenos-ia.mp4' },
+    { title: 'Insonnienos', meta: 'Sex toys e acrilico su denim ed ecopelle · 135×100 cm · 2024', images: [
+      'insonnienos.jpg', 'insonnienos-2.jpg', 'insonnienos-dettaglio-1.jpg', 'insonnienos-dettaglio-2.jpg', 'insonnienos-dettaglio-3.jpg', 'insonnienos-dettaglio-4.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Visionarienos', meta: 'Sex toys e acrilico su denim ed ecopelle · 2024', images: [
+      'visionarienos.jpg', 'visionarienos-2.jpg', 'visionarienos-dettaglio-1.jpg', 'visionarienos-dettaglio-2.jpg'
+    ].map(f => BASE + f) },
     { title: 'Mortenos', meta: 'Acrilico e sex toys su tela ed ecopelle · 135×100 cm · 2023', images: [
       'mortenos.jpg', 'mortenos-2.jpg', 'mortenos-dettaglio-1.jpg', 'mortenos-dettaglio-2.jpg', 'mortenos-dettaglio-3.jpg', 'mortenos-dettaglio-4.jpg', 'mortenos-dettaglio-5.jpg', 'mortenos-retro-1.jpg', 'mortenos-retro-2.jpg'
     ].map(f => BASE + f) },
@@ -114,12 +137,6 @@ export class DipintiComponent {
     { title: 'Albenos', meta: 'Acrilico e sex toys su tela ed ecopelle · 2023', images: withDetails('albenos', 5) },
     { title: 'Condannatenos', meta: 'Acrilico, sex toys e lamiera su ecopelle · 2023', images: [
       'condannatenos.jpg', 'condannatenos-2.jpg', 'condannatenos-dettaglio-1.jpg', 'condannatenos-dettaglio-2.jpg', 'condannatenos-dettaglio-3.jpg', 'condannatenos-dettaglio-4.jpg'
-    ].map(f => BASE + f) },
-    { title: 'Insonnienos', meta: 'Sex toys e acrilico su denim ed ecopelle · 135×100 cm · 2024', images: [
-      'insonnienos.jpg', 'insonnienos-2.jpg', 'insonnienos-dettaglio-1.jpg', 'insonnienos-dettaglio-2.jpg', 'insonnienos-dettaglio-3.jpg', 'insonnienos-dettaglio-4.jpg'
-    ].map(f => BASE + f) },
-    { title: 'Visionarienos', meta: 'Sex toys e acrilico su denim ed ecopelle · 2024', images: [
-      'visionarienos.jpg', 'visionarienos-2.jpg', 'visionarienos-dettaglio-1.jpg', 'visionarienos-dettaglio-2.jpg'
     ].map(f => BASE + f) },
     { title: 'Sanctuary Eco Retreat', meta: 'Opera realizzata per la performance al Sanctuary Eco Retreat · 2023', images: [
       'sanctuary.jpg', 'sanctuary-2.jpg', 'sanctuary-dettaglio-1.jpg'
@@ -132,6 +149,10 @@ export class DipintiComponent {
     const viewport = strip.parentElement as HTMLElement;
     viewport.classList.toggle('is-start', strip.scrollLeft <= 2);
     viewport.classList.toggle('is-end', strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2);
+  }
+
+  slideCount(p: Painting): number {
+    return p.images.length + (p.video ? 1 : 0);
   }
 
   scrollStrip(event: MouseEvent, direction: 1 | -1): void {
