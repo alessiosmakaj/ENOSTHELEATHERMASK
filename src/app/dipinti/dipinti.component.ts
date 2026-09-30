@@ -96,6 +96,15 @@ export class DipintiComponent {
     { title: 'Isolamentenos', meta: 'Acrilico, lamiera, sex toys e stampa 3D su tela · 135×100 cm · 2025', images: [
       'isolamentenos.jpg', 'isolamentenos-2.jpg', 'isolamentenos-dettaglio-1.jpg', 'isolamentenos-dettaglio-2.jpg', 'isolamentenos-dettaglio-3.jpg'
     ].map(f => BASE + f) },
+    { title: 'Borderlinenos', meta: 'Tecnica mista su tela · 155×95 cm · 2025', images: [
+      'borderlinenos.jpg', 'borderlinenos-2.jpg', 'borderlinenos-dettaglio-1.jpg', 'borderlinenos-dettaglio-2.jpg', 'borderlinenos-dettaglio-3.jpg', 'borderlinenos-dettaglio-4.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Generazionenos', meta: 'Tecnica mista su tela · 2025', images: [
+      'generazionenos.jpg', 'generazionenos-2.jpg', 'generazionenos-dettaglio-1.jpg', 'generazionenos-dettaglio-2.jpg', 'generazionenos-dettaglio-3.jpg', 'generazionenos-dettaglio-4.jpg'
+    ].map(f => BASE + f) },
+    { title: 'Sopravvisutenos', meta: 'Tecnica mista su tela · 145×85 cm · 2025', images: [
+      'sopravvisutenos.jpg', 'sopravvisutenos-2.jpg', 'sopravvisutenos-dettaglio-1.jpg', 'sopravvisutenos-dettaglio-2.jpg', 'sopravvisutenos-dettaglio-3.jpg', 'sopravvisutenos-dettaglio-4.jpg'
+    ].map(f => BASE + f) },
     { title: 'Mortenos', meta: 'Acrilico e sex toys su tela ed ecopelle · 135×100 cm · 2023', images: [
       'mortenos.jpg', 'mortenos-2.jpg', 'mortenos-dettaglio-1.jpg', 'mortenos-dettaglio-2.jpg', 'mortenos-dettaglio-3.jpg', 'mortenos-dettaglio-4.jpg', 'mortenos-dettaglio-5.jpg', 'mortenos-retro-1.jpg', 'mortenos-retro-2.jpg'
     ].map(f => BASE + f) },
