@@ -38,7 +38,7 @@ export class LaMascheraComponent {
     { title: 'TribalEnos', images: Array.from({ length: 4 }, (_, i) => `assets/masks/tribalenos-${i + 1}.jpg`), desc: [
       'Tribalenos è una maschera che incarna la stessa essenza primordiale del suo creatore. È più di un semplice ornamento, è una porta verso l’abisso dei desideri più ardenti e dei piaceri più profondi. È la liberazione incarnata, un’esplosione di emozioni viscerali che danzano nell’anima.'
     ] },
-    { title: 'FendEnos-CoccodrillEnos', images: [] as string[], desc: [
+    { title: 'FendEnos-CoccodrillEnos', images: Array.from({ length: 7 }, (_, i) => `assets/masks/fendenos-coccodrillenos-${i + 1}.jpg`), desc: [
       'Due maschere da slave, due facce della stessa Roma underground.',
       'FENDENOS, rivestita da una texture Fendi, è una reinterpretazione quasi blasfema della maison romana e della dipendenza dall’immaginario del lusso. Il desiderio di appartenergli, soprattutto da parte di chi ne è escluso, trasforma il lusso in un’ossessione: Enos lo prende, lo trascina nell’underground e lo rovina, trasformando il simbolo del prestigio in un segno di sottomissione.',
       'COCCODRILLENOS, con la sua texture da coccodrillo, rappresenta invece la ferocia e la freddezza necessarie per sopravvivere nella giungla urbana. Roma diventa un ambiente che costringe a sviluppare pelle dura, istinto e aggressività.',
