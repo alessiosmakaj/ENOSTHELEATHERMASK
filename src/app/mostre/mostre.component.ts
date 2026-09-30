@@ -26,7 +26,7 @@ export class MostreComponent {
     { year: '2023', title: 'Circolo degli Illuminati', location: 'Roma · mostra personale e performance · febbraio' },
     { year: '2022', title: 'Level Art Gallery', location: 'Mostra collettiva · dicembre' },
     { year: '2022', title: 'Culture Festival', location: 'Roma · novembre' },
-    { year: '2022', title: 'Police Festival', location: 'Roma · ottobre' },
+    { year: '2022', title: 'Polis Festival', location: 'Roma · ottobre' },
     { year: '2022', title: 'Za Art Gallery — «Contemporary slave»', location: 'Roma · ottobre' },
   ];
 }

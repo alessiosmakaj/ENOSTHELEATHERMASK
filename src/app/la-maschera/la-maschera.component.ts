@@ -34,7 +34,10 @@ export class LaMascheraComponent {
     { title: 'SicariEnos', images: Array.from({ length: 9 }, (_, i) => `assets/masks/sicarienos-${i + 1}.jpg`), desc: [
       'La maschera Sicarienos è tinta di un rosso sangue che evoca il sapore della vita e della morte, richiamando alla mente di Enos la sua stessa esistenza e la vitalità che scorre nelle vene. Al suo centro, una croce emerge come simbolo di protezione, benedicendo l’anima di Enos dai suoi peccati e offrendo un punto di riferimento spirituale nel suo cammino. La croce viola e le lapidi sui lati della maschera rappresentano i lividi, simboli delle battaglie e delle ferite che ha subito nel corso della vita.'
     ] },
-    { title: 'VisionariEnos', images: Array.from({ length: 10 }, (_, i) => `assets/masks/visionarienos-${i + 1}.jpg`), desc: [] as string[] },
+    { title: 'VisionariEnos', images: Array.from({ length: 10 }, (_, i) => `assets/masks/visionarienos-${i + 1}.jpg`), desc: [
+      'La maschera Visionarienos è l’incarnazione stessa di Enos, rischiarato dalle tenebre delle sue visioni. Il bianco che la avvolge simboleggia la luce che lo guida, anche quando le sue visioni sono oscure e inquietanti. I fori di proiettili ai lati della sua testa sono come cicatrici di dolore e drammi, tessuti nella trama della sua genialità.',
+      'La bocca, dipinta di rosso tribale, racconta la potenza e la ferocia delle parole di Enos, riflesso del suo mondo crudo e senza veli, plasmato dal dolore.'
+    ] },
     { title: 'TribalEnos', images: Array.from({ length: 4 }, (_, i) => `assets/masks/tribalenos-${i + 1}.jpg`), desc: [
       'Tribalenos è una maschera che incarna la stessa essenza primordiale del suo creatore. È più di un semplice ornamento, è una porta verso l’abisso dei desideri più ardenti e dei piaceri più profondi. È la liberazione incarnata, un’esplosione di emozioni viscerali che danzano nell’anima.'
     ] },
