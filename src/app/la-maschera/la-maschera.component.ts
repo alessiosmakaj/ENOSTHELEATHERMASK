@@ -44,7 +44,7 @@ export class LaMascheraComponent {
       'COCCODRILLENOS, con la sua texture da coccodrillo, rappresenta invece la ferocia e la freddezza necessarie per sopravvivere nella giungla urbana. Roma diventa un ambiente che costringe a sviluppare pelle dura, istinto e aggressività.',
       'Due maschere, una stessa città: lusso e povertà, desiderio e sottomissione, ferocia e sopravvivenza si incontrano nella carne di Enos.'
     ] },
-    { title: 'LeatherMask', images: [] as string[], desc: [
+    { title: 'LeatherMask', images: Array.from({ length: 3 }, (_, i) => `assets/masks/leathermask-${i + 1}.jpg`), desc: [
       'La prima maschera di Enos, una slave mask in pelle customizzata, da cui nasce tutto il suo immaginario.',
       'Enos non si definisce un artista, ma un antieroe: indossa la maschera perché è schiavo del mondo contemporaneo, dei suoi vincoli, desideri, dipendenze e imposizioni.',
       'La consapevolezza di essere schiavo diventa però una forma di libertà: Enos usa la maschera per guardare e combattere la propria condizione, portandola all’estremo attraverso un immaginario crudo, violento e carnale.',
