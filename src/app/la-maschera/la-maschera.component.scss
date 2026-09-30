@@ -82,6 +82,19 @@
   &__viewport.is-end &__arrow--next {
     display: none;
   }
+
+  &__desc {
+    max-width: 680px;
+    margin: $space-5 auto 0;
+
+    p {
+      color: $color-ivory-dim;
+
+      &:not(:last-child) {
+        margin-bottom: $space-3;
+      }
+    }
+  }
 }
 
 @media (max-width: $bp-tablet) {

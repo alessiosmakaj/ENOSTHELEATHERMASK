@@ -52,5 +52,8 @@
       </div>
     </ng-container>
     <ng-template #soon><p class="coming-soon">Coming soon</p></ng-template>
+    <div class="mask-carousel__desc" *ngIf="m.desc.length">
+      <p *ngFor="let p of m.desc">{{ p }}</p>
+    </div>
   </div>
 </section>
