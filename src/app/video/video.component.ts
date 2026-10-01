@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class VideoComponent {
   readonly sections = [
     { title: 'AI', showcase: false },
-    { title: 'Cortometraggi', showcase: true },
+    { title: 'Cortometraggi', showcase: false },
   ];
 }
