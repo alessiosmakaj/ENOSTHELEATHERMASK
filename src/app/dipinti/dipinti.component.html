@@ -29,7 +29,7 @@
       <div class="painting__viewport is-start" [appSwipeHint]="slideCount(p) > 1">
         <div class="painting__strip" (scroll)="onStripScroll($event)">
           <img *ngFor="let src of p.images" [src]="src" [alt]="p.title" class="painting__slide" loading="lazy" decoding="async">
-          <video *ngIf="p.video" [src]="p.video" class="painting__slide" muted loop playsinline preload="metadata" appPlayOnVisible></video>
+          <video *ngIf="p.video" [src]="p.video" class="painting__slide" muted loop playsinline preload="none" appPlayOnVisible></video>
         </div>
         <ng-container *ngIf="slideCount(p) > 1">
           <button class="painting__arrow painting__arrow--prev" (click)="scrollStrip($event, -1)" aria-label="Immagine precedente">
