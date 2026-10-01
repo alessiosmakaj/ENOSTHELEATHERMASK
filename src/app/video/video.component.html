@@ -40,7 +40,15 @@
     </figure>
 
     <div class="card-grid">
-      <article class="card card--soon" *ngFor="let p of [1, 2]">
+      <article class="card" *ngFor="let v of s.videos">
+        <div class="card__media">
+          <video [src]="v.src" [poster]="posterFor(v.src)" controls preload="none" playsinline class="card__video"></video>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">{{ v.title }}</h3>
+        </div>
+      </article>
+      <article class="card card--soon">
         <div class="card__media">
           <svg viewBox="0 0 100 100" focusable="false" aria-hidden="true">
             <polygon points="40,30 40,70 72,50" fill="currentColor" />

@@ -1,4 +1,4 @@
-<header class="page-header">
+﻿<header class="page-header">
   <span class="page-header__eyebrow">Corpo, sangue, liturgia</span>
   <h1 class="page-header__title">Performance</h1>
   <p class="page-header__lede">Il corpo come altare: un attraversamento del limite davanti a un pubblico testimone.</p>
@@ -14,21 +14,24 @@
         Le performance di Enos sono rituali di carne, sangue e materia. Il corpo diventa
         parte dell'opera e la tela diventa un luogo di ribellione, distruzione e rinascita.
         Attraverso gesti estremi e simbolici, Enos mette in scena il proprio rapporto con la
-        morte dell'identità precedente: un omicidio e un suicidio simbolici dell'artista,
-        intesi come distruzione del vecchio sé per lasciare spazio a una nuova forma.
+        morte dell'identitÃ  precedente: un omicidio e un suicidio simbolici dell'artista,
+        intesi come distruzione del vecchio sÃ© per lasciare spazio a una nuova forma.
       </p>
       <p>
         La performance non racconta semplicemente un'azione, ma costruisce un rituale in cui
         corpo, tela e materia vengono sottoposti a un processo di trasformazione.
       </p>
     </div>
-    <figure class="video-showcase">
-      <video controls preload="metadata" playsinline>
-        <source src="assets/enos.mp4" type="video/mp4" />
-        Il tuo browser non supporta la riproduzione video.
-      </video>
-      <figcaption class="video-showcase__caption">DIPENDENTENOS · 2024</figcaption>
-    </figure>
+    <div class="card-grid">
+      <article class="card" *ngFor="let v of performanceVideos">
+        <div class="card__media">
+          <video [src]="v.src" [poster]="posterFor(v.src)" controls preload="none" playsinline class="card__video"></video>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">{{ v.title }}</h3>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -37,14 +40,14 @@
     <h2 class="perf-section__title">Tattoo</h2>
     <div class="perf-section__text">
       <p>
-        Il tatuaggio è l'estensione della ricerca pittorica di Enos sulla carne. Le immagini
+        Il tatuaggio Ã¨ l'estensione della ricerca pittorica di Enos sulla carne. Le immagini
         tatuate sono estratti delle sue opere e del suo universo visivo, tradotti dalla tela
-        alla pelle e incisi direttamente sul corpo. Il tatuaggio diventa così una forma di
-        trasferimento: ciò che nasce come pittura abbandona il supporto tradizionale e
+        alla pelle e incisi direttamente sul corpo. Il tatuaggio diventa cosÃ¬ una forma di
+        trasferimento: ciÃ² che nasce come pittura abbandona il supporto tradizionale e
         diventa parte permanente di un altro corpo.
       </p>
       <p>
-        Ogni composizione può nascere dalla selezione di un progetto già esistente oppure
+        Ogni composizione puÃ² nascere dalla selezione di un progetto giÃ  esistente oppure
         essere sviluppata a partire dalla storia, dalla memoria e dal corpo della persona che
         la riceve.
       </p>
@@ -53,7 +56,16 @@
         integrante dell'opera.
       </p>
     </div>
-    <p class="coming-soon">Coming soon</p>
+    <div class="card-grid">
+      <article class="card" *ngFor="let v of tattooVideos">
+        <div class="card__media">
+          <video [src]="v.src" [poster]="posterFor(v.src)" controls preload="none" playsinline class="card__video"></video>
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">{{ v.title }}</h3>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
