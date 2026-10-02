@@ -46,7 +46,7 @@ export class DipintiComponent {
     { title: 'Incubi Dissociativi', meta: 'Acrilico e sex toys su scuba', images: [
       'incubi-dissociativi.jpg', 'incubi-dissociativi-dettaglio-1.jpg', 'incubi-dissociativi-dettaglio-2.jpg', 'incubi-dissociativi-dettaglio-3.jpg', 'incubi-dissociativi-dettaglio-4.jpg'
     ].map(f => BASE + f) },
-    { title: 'Lofiforme', meta: 'Acrilico e vernice su cotone a righe', images: [
+    { title: 'Lofiforme', meta: 'Sex toys e acrilico su cotone a righe', images: [
       'lofiforme.jpg', 'lofiforme-dettaglio-1.jpg', 'lofiforme-dettaglio-2.jpg'
     ].map(f => BASE + f) },
     { title: 'Necroserotonina', meta: 'Acrilico e sex toys su ecopelle', images: [
@@ -55,7 +55,7 @@ export class DipintiComponent {
     { title: 'Portale di Sangue', meta: 'Acrilico, sex toys, latex e vetrificante su ecopelle · 130×100 cm · 2025', images: [
       'portale-di-sangue.jpg', 'portale-di-sangue-dettaglio-1.jpg', 'portale-di-sangue-dettaglio-2.jpg', 'portale-di-sangue-dettaglio-3.jpg', 'portale-di-sangue-dettaglio-4.jpg'
     ].map(f => BASE + f) },
-    { title: 'Speranza Annegata', meta: 'Acrilico, sex toys, latex, vetrificante e polaroid · 130 cm · 2025', images: [
+    { title: 'Speranza Annegata', meta: 'Acrilico, sex toys, latex, vetrificante e polaroid · 130×100 cm · 2025', images: [
       'speranza-annegata.jpg', 'speranza-annegata-dettaglio-1.jpg'
     ].map(f => BASE + f) },
     { title: 'Necropolenos (Amore/Morte)', meta: 'Acrilico, latex, sex toys, resina e sangue su ecopelle e tela · 170×320 cm · 2025', images: [
@@ -118,7 +118,7 @@ export class DipintiComponent {
     { title: 'Suicidenos', meta: 'Acrilico, pena, sex toys e latex su tela · 110×100 cm · 2024', images: [BASE + 'suicidenos.jpg'], video: BASE + 'suicidenos-ia.mp4' },
     { title: 'Lobotomizazionenos', meta: 'Acrilico, sex toys e latex su tela ed ecopelle · 110×100 cm · 2024', images: [BASE + 'lobotomizazionenos.jpg'], video: BASE + 'lobotomizazionenos-ia.mp4' },
     { title: 'Armaturenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'armaturenos.jpg'], video: BASE + 'armaturenos-ia.mp4' },
-    { title: 'Relazionenos', meta: '2024', images: [BASE + 'reazionenos.jpg'], video: BASE + 'relazionenos-ia.mp4' },
+    { title: 'Relazionenos', meta: 'Acrilico, sex toys e latex su ecopelle · 110×100 cm · 2024', images: [BASE + 'reazionenos.jpg'], video: BASE + 'relazionenos-ia.mp4' },
     { title: 'Insonnienos', meta: 'Sex toys e acrilico su denim ed ecopelle · 135×100 cm · 2024', images: [
       'insonnienos.jpg', 'insonnienos-2.jpg', 'insonnienos-dettaglio-1.jpg', 'insonnienos-dettaglio-2.jpg', 'insonnienos-dettaglio-3.jpg', 'insonnienos-dettaglio-4.jpg'
     ].map(f => BASE + f) },

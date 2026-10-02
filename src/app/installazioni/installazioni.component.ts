@@ -27,7 +27,7 @@ export class InstallazioniComponent {
       'gogna-viva-1.jpg', 'gogna-viva-2.jpg', 'gogna-viva-3.jpg', 'gogna-viva-4.jpg'
     ].map(f => BASE + f) },
     { title: 'Adolescenzenos', meta: 'Spray, sex toys, acrilico, poliuretano, tubi, maschera di pelle e Vans · 2024', images: [BASE + 'adolescenzenos.jpg'] },
-    { title: 'Embrionenos', meta: '2024', images: [BASE + 'embrionenos.jpg'], video: BASE + 'embrionenos-ia.mp4' },
+    { title: 'Embrionenos', meta: 'Poliuretano, spray, sex toys e acrilico · 2024', images: [BASE + 'embrionenos.jpg'], video: BASE + 'embrionenos-ia.mp4' },
     { title: 'Lapidenos', meta: 'Sex toys, acrilico, spray, poliuretano, maschera di pelle e croce in legno · 2024', images: [BASE + 'lapidenos.jpg'], video: BASE + 'lapidenos-ia.mp4' },
     { title: 'Martirenos', meta: 'Acrilico, spray, poliuretano e Dr. Martens · 2024', images: [BASE + 'martirenos.jpg'] },
     { title: 'Mazzaferratenos', meta: 'Acrilico, sex toys, spray, catene e maschera · 2024', images: [BASE + 'mazzaferratenos.jpg'] },
