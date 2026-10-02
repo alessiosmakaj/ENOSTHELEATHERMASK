@@ -13,7 +13,7 @@ export class PerformanceComponent {
     { title: 'Amore in Putrefazionenos · 2025', src: 'assets/video/amore-in-putrefazionenos.mp4' },
     { title: 'Necropolenos · 2025', src: 'assets/video/necropolenos-performance.mp4' },
     { title: 'Dipendentenos · 2024', src: 'assets/enos.mp4' },
-    { title: 'Cadaverenos', src: 'assets/video/cadaverenos-performance.mp4' },
+    { title: 'Cadaverenos · 2024', src: 'assets/video/cadaverenos-performance.mp4' },
     { title: 'Sicarienos · 2024', src: 'assets/video/sicarienos-performance.mp4' },
     { title: 'Noirealismenos · 2024', src: 'assets/video/noirealismenos.mp4' },
   ];
