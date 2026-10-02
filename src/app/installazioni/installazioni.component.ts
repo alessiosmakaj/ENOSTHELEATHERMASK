@@ -18,6 +18,9 @@ export class InstallazioniComponent {
   // Dal più recente al più vecchio.
   readonly installazioni: Installazione[] = [
     { title: 'Muta Umana (X KROMOS)', meta: 'Acrilico, latex, vetrificante, sex toys e neon su forex · 2026', images: [BASE + 'muta-umana.jpg'] },
+    { title: 'Carne Marchiata', meta: 'Poliuretano, acrilico, sex toys, cartapesta e ossa · 2025', images: [
+      'carne-marchiata-installazione.jpg', 'carne-marchiata-installazione-dettaglio-1.jpg'
+    ].map(f => BASE + f) },
     { title: 'Gogna Viva', meta: 'Latex, legno, stampa in 3D e vernice · 2025', images: [
       'gogna-viva-1.jpg', 'gogna-viva-2.jpg', 'gogna-viva-3.jpg', 'gogna-viva-4.jpg'
     ].map(f => BASE + f) },
@@ -28,10 +31,10 @@ export class InstallazioniComponent {
     { title: 'Lapidenos', meta: 'Sex toys, acrilico, spray, poliuretano, maschera di pelle e croce in legno · 2024', images: [BASE + 'lapidenos.jpg'], video: BASE + 'lapidenos-ia.mp4' },
     { title: 'Martirenos', meta: 'Acrilico, spray, poliuretano e Dr. Martens · 2024', images: [BASE + 'martirenos.jpg'] },
     { title: 'Mazzaferratenos', meta: 'Acrilico, sex toys, spray, catene e maschera · 2024', images: [BASE + 'mazzaferratenos.jpg'] },
-    { title: 'Kromosenos', meta: 'Acrilico, sex toys, lamiera e neon su forex · 2023', images: [BASE + 'kromosenos.jpg'] },
     { title: 'Crocenos 01', meta: 'Acrilico e sex toys su ecopelle · 2023', images: [
       'crocenos-01.jpg', 'crocenos-02.jpg', 'crocenos-03.jpg', 'crocenos-04.jpg'
     ].map(f => BASE + f) },
+    { title: 'Kromosenos', meta: 'Acrilico, sex toys, lamiera e neon su forex · 2022', images: [BASE + 'kromosenos.jpg'] },
     { title: 'Senza titolo', meta: 'Spray marker e sex toys su cartello stradale · 2022', images: [BASE + 'cartello-2022.jpg'] },
   ];
 
