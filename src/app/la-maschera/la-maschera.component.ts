@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class LaMascheraComponent {
   readonly masks = [
-    { title: 'Boia', images: [] as string[], desc: [
-      'BOIA nasce dall’immaginario splatter, slasher e horror gotico di Enos: una figura violenta che uccide simbolicamente ogni forma di prigionia e schiavitù.',
+    { title: 'Il Boia', images: [] as string[], desc: [
+      'IL BOIA nasce dall’immaginario splatter, slasher e horror gotico di Enos: una figura violenta che uccide simbolicamente ogni forma di prigionia e schiavitù.',
       'Realizzata attraverso vere Polo Ralph Lauren, la maschera trasforma un simbolo di lusso e status in materia di rivolta.',
       'È una maschera attiva, aggressiva e liberatoria: non subisce più la schiavitù, la combatte.',
       'È inoltre la prima maschera che può essere ricevuta e indossata dal pubblico, trasformando Enos da individuo a simbolo condiviso: l’inizio di un vero culto.'

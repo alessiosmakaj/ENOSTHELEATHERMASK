@@ -6,29 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./video.component.scss']
 })
 export class VideoComponent {
-  readonly sections = [
-    { title: 'AI', showcase: false, videos: [
-      { title: 'Portalenos', src: 'assets/video/portalenos.mp4' },
-      { title: 'Risurrezionenos', src: 'assets/video/risurrezionenos.mp4' },
-      { title: 'Incubo di Carne — parte 1', src: 'assets/video/incubo-di-carne-pt1.mp4' },
-      { title: 'Incubo di Carne — parte 2', src: 'assets/video/incubo-di-carne-pt2.mp4' },
-    ] },
-    { title: 'Cortometraggi', showcase: false, videos: [
-      { title: 'Sottomissionenos', src: 'assets/video/sottomissionenos.mp4' },
-      { title: 'Portalenos 2', src: 'assets/video/portalenos-2.mp4' },
-      { title: 'Madrenos', src: 'assets/video/madrenos.mp4' },
-      { title: '24 Uovenos', src: 'assets/video/24uovenos.mp4' },
-      { title: 'Gognenos', src: 'assets/video/gognenos-corto.mp4' },
-      { title: 'Funeralenos', src: 'assets/video/funeralenos.mp4' },
-      { title: 'Benedettenos', src: 'assets/video/benedettenos.mp4' },
-      { title: 'Distopichenoshotel — parte 1', src: 'assets/video/distopichenoshotel-1.mp4' },
-      { title: 'Distopichenoshotel — parte 2', src: 'assets/video/distopichenoshotel-2.mp4' },
-      { title: 'Distopichenoshotel — parte 3', src: 'assets/video/distopichenoshotel-3.mp4' },
-      { title: 'Distopichenoshotel — parte 4', src: 'assets/video/distopichenoshotel-4.mp4' },
-      { title: 'Distopichenoshotel — parte 5', src: 'assets/video/distopichenoshotel-5.mp4' },
-      { title: 'Distopichenoshotel — parte 6', src: 'assets/video/distopichenoshotel-6.mp4' },
-      { title: 'Orrore in Polaroid', src: 'assets/video/orrore-in-polaroid.mp4' },
-    ] },
+  readonly videos = [
+    { title: 'Portalenos', src: 'assets/video/portalenos.mp4' },
+    { title: 'Risurrezionenos', src: 'assets/video/risurrezionenos.mp4' },
+    { title: 'Incubo di Carne — parte 1', src: 'assets/video/incubo-di-carne-pt1.mp4' },
+    { title: 'Incubo di Carne — parte 2', src: 'assets/video/incubo-di-carne-pt2.mp4' },
+    { title: 'Sottomissionenos', src: 'assets/video/sottomissionenos.mp4' },
+    { title: 'Portalenos 2', src: 'assets/video/portalenos-2.mp4' },
+    { title: 'Madrenos', src: 'assets/video/madrenos.mp4' },
+    { title: '24 Uovenos', src: 'assets/video/24uovenos.mp4' },
+    { title: 'Gognenos', src: 'assets/video/gognenos-corto.mp4' },
+    { title: 'Funeralenos', src: 'assets/video/funeralenos.mp4' },
+    { title: 'Benedettenos', src: 'assets/video/benedettenos.mp4' },
+    { title: 'Distopichenoshotel — parte 1', src: 'assets/video/distopichenoshotel-1.mp4' },
+    { title: 'Distopichenoshotel — parte 2', src: 'assets/video/distopichenoshotel-2.mp4' },
+    { title: 'Distopichenoshotel — parte 3', src: 'assets/video/distopichenoshotel-3.mp4' },
+    { title: 'Distopichenoshotel — parte 4', src: 'assets/video/distopichenoshotel-4.mp4' },
+    { title: 'Distopichenoshotel — parte 5', src: 'assets/video/distopichenoshotel-5.mp4' },
+    { title: 'Distopichenoshotel — parte 6', src: 'assets/video/distopichenoshotel-6.mp4' },
+    { title: 'Orrore in Polaroid', src: 'assets/video/orrore-in-polaroid.mp4' },
   ];
 
   posterFor(src: string): string {
