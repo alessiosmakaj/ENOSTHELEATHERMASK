@@ -58,9 +58,27 @@
     </div>
     <div class="card-grid">
       <article class="card" *ngFor="let v of tattooVideos">
-        <div class="card__media">
-          <video [src]="v.src" [poster]="posterFor(v.src)" controls preload="none" playsinline class="card__video"></video>
-        </div>
+        <ng-container *ngIf="v.images?.length; else simpleTattooVideo">
+          <div class="card__media is-start" [appSwipeHint]="tattooSlideCount(v) > 1">
+            <div class="card__strip" (scroll)="onTattooStripScroll($event)">
+              <video [src]="v.src" class="card__slide" muted loop playsinline preload="none" appPlayOnVisible></video>
+              <img *ngFor="let img of v.images" [src]="img" [alt]="v.title" class="card__slide" loading="lazy" decoding="async">
+            </div>
+            <ng-container *ngIf="tattooSlideCount(v) > 1">
+              <button class="card__arrow card__arrow--prev" (click)="scrollTattooStrip($event, -1)" aria-label="Immagine precedente">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="card__arrow card__arrow--next" (click)="scrollTattooStrip($event, 1)" aria-label="Immagine successiva">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </ng-container>
+          </div>
+        </ng-container>
+        <ng-template #simpleTattooVideo>
+          <div class="card__media">
+            <video [src]="v.src" [poster]="posterFor(v.src)" controls preload="none" playsinline class="card__video"></video>
+          </div>
+        </ng-template>
         <div class="card__body">
           <h3 class="card__title">{{ v.title }}</h3>
         </div>

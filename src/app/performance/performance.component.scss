@@ -26,3 +26,64 @@
   height: 100%;
   object-fit: cover;
 }
+
+// Carosello (video muto + foto) dentro una card, stesso pattern dei dipinti/installazioni.
+.card__strip {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  height: 100%;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+.card__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid $color-iron-soft;
+  background: rgba($color-void, 0.55);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  color: $color-ivory;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: opacity $dur-fast ease, background $dur-fast ease;
+
+  svg { width: 18px; height: 18px; }
+
+  &:hover {
+    opacity: 1;
+    background: rgba($color-blood, 0.55);
+  }
+
+  &--prev { left: $space-2; }
+  &--next { right: $space-2; }
+}
+
+.card__media.is-start .card__arrow--prev,
+.card__media.is-end .card__arrow--next {
+  display: none;
+}
+
+@media (max-width: $bp-tablet) {
+  .card__arrow {
+    display: none;
+  }
+}
