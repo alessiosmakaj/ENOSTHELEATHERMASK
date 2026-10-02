@@ -18,14 +18,14 @@ export class InstallazioniComponent {
   // Dal più recente al più vecchio.
   readonly installazioni: Installazione[] = [
     { title: 'Muta Umana (X KROMOS)', meta: 'Acrilico, latex, vetrificante, sex toys e neon su forex · 2026', images: [BASE + 'muta-umana.jpg'] },
+    { title: 'Carcassa02', meta: 'Acrilico, pelle lucida su pelle · 2026', images: [BASE + 'carcassa-02.jpg'] },
+    { title: 'Carcassa01', meta: 'Acrilico, pelle lucida su pelle · 2026', images: [BASE + 'carcassa-01.jpg'] },
     { title: 'Carne Marchiata', meta: 'Poliuretano, acrilico, sex toys, cartapesta e ossa · 2025', images: [
       'carne-marchiata-installazione.jpg', 'carne-marchiata-installazione-dettaglio-1.jpg'
     ].map(f => BASE + f) },
     { title: 'Gogna Viva', meta: 'Latex, legno, stampa in 3D e vernice · 2025', images: [
       'gogna-viva-1.jpg', 'gogna-viva-2.jpg', 'gogna-viva-3.jpg', 'gogna-viva-4.jpg'
     ].map(f => BASE + f) },
-    { title: 'Carcassa02', meta: 'Acrilico, pelle lucida su pelle · 2026', images: [BASE + 'carcassa-02.jpg'] },
-    { title: 'Carcassa01', meta: 'Acrilico, pelle lucida su pelle · 2026', images: [BASE + 'carcassa-01.jpg'] },
     { title: 'Adolescenzenos', meta: 'Spray, sex toys, acrilico, poliuretano, tubi, maschera di pelle e Vans · 2024', images: [BASE + 'adolescenzenos.jpg'] },
     { title: 'Embrionenos', meta: '2024', images: [BASE + 'embrionenos.jpg'], video: BASE + 'embrionenos-ia.mp4' },
     { title: 'Lapidenos', meta: 'Sex toys, acrilico, spray, poliuretano, maschera di pelle e croce in legno · 2024', images: [BASE + 'lapidenos.jpg'], video: BASE + 'lapidenos-ia.mp4' },
