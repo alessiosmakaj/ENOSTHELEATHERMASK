@@ -32,7 +32,7 @@
     <article class="inst" *ngFor="let item of installazioni">
       <div class="inst__viewport is-start" [appSwipeHint]="slideCount(item) > 1">
         <div class="inst__strip" (scroll)="onStripScroll($event)">
-          <img *ngFor="let src of item.images" [src]="src" [alt]="item.title" class="inst__slide" loading="lazy" decoding="async">
+          <img *ngFor="let src of item.images" [src]="src" [srcset]="srcsetFor(src)" [sizes]="gallerySizes" [alt]="item.title" class="inst__slide" loading="lazy" decoding="async">
           <video *ngIf="item.video" [src]="item.video" class="inst__slide" muted loop playsinline preload="none" appPlayOnVisible></video>
         </div>
         <ng-container *ngIf="slideCount(item) > 1">

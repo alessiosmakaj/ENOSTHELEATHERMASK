@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GALLERY_SIZES, srcsetFor } from '../image-srcset';
 
 @Component({
   selector: 'app-la-maschera',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./la-maschera.component.scss']
 })
 export class LaMascheraComponent {
+  readonly srcsetFor = srcsetFor;
+  readonly gallerySizes = GALLERY_SIZES;
+
   readonly masks = [
     { title: 'Il Boia', images: [] as string[], desc: [
       'IL BOIA nasce dall’immaginario splatter, slasher e horror gotico di Enos: una figura violenta che uccide simbolicamente ogni forma di prigionia e schiavitù.',

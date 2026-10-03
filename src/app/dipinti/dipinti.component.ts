@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GALLERY_SIZES, srcsetFor } from '../image-srcset';
 
 interface Painting {
   title: string;
@@ -167,6 +168,9 @@ export class DipintiComponent {
     viewport.classList.toggle('is-start', strip.scrollLeft <= 2);
     viewport.classList.toggle('is-end', strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2);
   }
+
+  readonly srcsetFor = srcsetFor;
+  readonly gallerySizes = GALLERY_SIZES;
 
   slideCount(p: Painting): number {
     return p.images.length + (p.video ? 1 : 0);

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GALLERY_SIZES, srcsetFor } from '../image-srcset';
 
 interface Installazione {
   title: string;
@@ -37,6 +38,9 @@ export class InstallazioniComponent {
     { title: 'Kromosenos', meta: 'Acrilico, sex toys, lamiera e neon su forex · 2022', images: [BASE + 'kromosenos.jpg'] },
     { title: 'Senza titolo', meta: 'Spray marker e sex toys su cartello stradale · 2022', images: [BASE + 'cartello-2022.jpg'] },
   ];
+
+  readonly srcsetFor = srcsetFor;
+  readonly gallerySizes = GALLERY_SIZES;
 
   slideCount(item: Installazione): number {
     return item.images.length + (item.video ? 1 : 0);

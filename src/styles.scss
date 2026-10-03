@@ -146,6 +146,15 @@ html {
   margin-block: $space-5;
 }
 
+// Liste lunghe: il browser non disegna né tiene decodificate le card fuori schermo (memoria su mobile).
+.painting,
+.inst,
+.mask-carousel,
+.card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
 // Griglia di card riutilizzabile (opere, installazioni, mostre)
 .card-grid {
   display: grid;

@@ -57,6 +57,9 @@ const rand = (min: number, max: number) => min + Math.random() * (max - min);
 const pick = (palette: string[]) => palette[Math.floor(Math.random() * palette.length)];
 const fadeAlpha = (age: number, oil: boolean) => Math.min(1, Math.max(0, ((oil ? OIL_LIFE : BLOOD_LIFE) - age) / BLOOD_FADE));
 
+// Su touch il canvas a schermo intero a DPR 2 costa parecchia memoria: l'effetto è un'animazione, basta 1x.
+const maxDpr = (): number => (window.matchMedia('(pointer: coarse)').matches ? 1 : 2);
+
 function ensureCanvas(): void {
   if (!canvas) {
     canvas = document.createElement('canvas');
@@ -66,7 +69,7 @@ function ensureCanvas(): void {
     ctx = canvas.getContext('2d');
   }
   canvas.style.display = 'block';
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const dpr = Math.min(window.devicePixelRatio || 1, maxDpr());
   const w = Math.round(window.innerWidth * dpr);
   const h = Math.round(window.innerHeight * dpr);
   if (canvas.width !== w || canvas.height !== h) {
@@ -208,7 +211,7 @@ function drawDrip(c: CanvasRenderingContext2D, d: Drip, age: number): void {
 
 function frame(now: number): void {
   const c = ctx!;
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const dpr = Math.min(window.devicePixelRatio || 1, maxDpr());
   const f = Math.min((now - last) / 16.67, 3);
   last = now;
   c.setTransform(dpr, 0, 0, dpr, 0, 0);
